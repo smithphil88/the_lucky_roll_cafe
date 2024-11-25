@@ -7,8 +7,8 @@ assignees: ''
 
 ---
 
-As a   ,I can  ,so that
+As a  , I can  , so that
 
-In order to   ,as a     , I can
+In order to , as a , I can
 
-Acceptance Criteria
+Acceptance Criteria:
