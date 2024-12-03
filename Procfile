@@ -1,0 +1,1 @@
+web: gunicorn the_lucky_roll.wsgi
