@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class HelloWorldConfig(AppConfig):
+class TableBookingConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'hello_world'
+    name = 'table_booking'
