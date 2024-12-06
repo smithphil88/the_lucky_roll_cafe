@@ -33,4 +33,9 @@ class Booking(models.Model):
                 ])
         booked_on = models.DateTimeField(auto_now_add=True)
         additional_message = models.TextField()
+
+        class Meta:
+                ordering = ["booked_on"]
         
+        def __str__(self):
+                return f'Booked by {self.user} for {self.num_of_guests} people at {self.time} on {self.booking_date}'
