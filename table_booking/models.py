@@ -35,7 +35,7 @@ class Booking(models.Model):
         additional_message = models.TextField()
 
         class Meta:
-                ordering = ["booked_on"]
+                ordering = ["-booked_on"]
         
         def __str__(self):
                 return f'Booked by {self.user} for {self.num_of_guests} people at {self.time} on {self.booking_date}'
