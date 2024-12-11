@@ -8,6 +8,11 @@ class BookingList(generic.ListView):
     template_name = "bookings_list.html"
 
 
+def about(request, template_name="base.html"):
+    return render(
+        request, template_name,
+    )
+
 def home(request, template_name="index.html"):
     return render(
         request, template_name
