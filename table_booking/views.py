@@ -22,3 +22,8 @@ def about(request, template_name="about.html"):
     return render(
         request, template_name,
     )
+
+def book(request, template_name="book.html"):
+    return render(
+        request, template_name,
+    )
