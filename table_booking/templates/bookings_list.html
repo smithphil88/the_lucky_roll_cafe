@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<body>
+<section>
     <h1>Bookings list</h1>
     {% for booking in object_list %}
     <h2>{{booking.user}}</h2>
@@ -11,6 +11,6 @@
     <p>Number of guests: {{booking.num_of_guests}}</p>
     <p>{{booking.table_type}}</p>
     {% endfor %}
-</body>
+</section>
 
 {% endblock %}
