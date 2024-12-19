@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from django.views import generic
 from .models import Booking
+from .forms import BookingForm
+
+booking_form = BookingForm()
+
 # Create your views here.
 
 class BookingList(generic.ListView):
@@ -26,4 +30,7 @@ def about(request, template_name="about.html"):
 def book(request, template_name="book.html"):
     return render(
         request, template_name,
+        {
+            "booking_form": booking_form
+        }
     )
