@@ -32,7 +32,7 @@ class Booking(models.Model):
                 MinValueValidator(1)
                 ])
         booked_on = models.DateTimeField(auto_now_add=True)
-        additional_message = models.TextField()
+        additional_message = models.TextField(max_length=300, null=True, blank=True)
 
         class Meta:
                 ordering = ["-booked_on"]
