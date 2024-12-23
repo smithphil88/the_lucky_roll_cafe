@@ -39,3 +39,14 @@ class Booking(models.Model):
         
         def __str__(self):
                 return f'Booked by {self.user} for {self.num_of_guests} people at {self.time} on {self.booking_date}'
+
+class UserProfile(models.Model):
+
+        user = models.OneToOneField(User, on_delete=models.CASCADE)
+        first_name = models.CharField(null=True, max_length=50)
+        last_name = models.CharField(null=True, max_length=50)
+        email = models.EmailField(max_length=300)
+
+        def __str__(self):
+                if self.user:
+                        return self.email

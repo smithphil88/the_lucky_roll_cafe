@@ -53,7 +53,7 @@
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item p-2">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Profile</a>
+                        <a class="nav-link {% if request.path == profile %}active{% endif %}" class="test" aria-current="page" href="{% url 'profile' %}">Profile</a>
                     </li>
                     {% else %}
                     <li class="nav-item p-2">

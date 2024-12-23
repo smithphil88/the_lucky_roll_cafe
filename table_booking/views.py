@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
-from .models import Booking
+from django.contrib.auth.decorators import login_required
+from .models import Booking, UserProfile
 from .forms import BookingForm
 
 booking_form = BookingForm()
@@ -33,4 +34,15 @@ def book(request, template_name="book.html"):
         {
             "booking_form": booking_form
         }
+    )
+
+@login_required
+def profile(request):
+
+    customer_data = UserProfile.objects.all()
+
+    template_name = 'profile.html'
+
+    return render(
+        request, template_name, {'profile': customer_data,}
     )
