@@ -27,7 +27,9 @@ body {
 
 .navbar-brand {
     font-family: "Cinzel Decorative", sans-serif;
+    font-size: 30px;
     color: white;
+    margin: 2px;
 }
 
 .nav-logo {
@@ -69,7 +71,9 @@ img {
 
 .nav-link {
     color: white;
-    font-size: 20px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-between;
 }
 
 footer {

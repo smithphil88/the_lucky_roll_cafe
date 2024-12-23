@@ -46,11 +46,14 @@
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link" aria-current="page"
-                        href="{% url 'book' %}">Book a table</a>
+                        href="{% url 'book' %}">Book</a>
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item p-2">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item p-2">
+                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Profile</a>
                     </li>
                     {% else %}
                     <li class="nav-item p-2">
