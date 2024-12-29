@@ -1,8 +1,12 @@
 {% extends "base.html" %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <body>
     <h1>About page</h1>
     <p>The Lucky Roll cafe is first and foremost an inclusive and welcoming cafe.</p>
 </body>
+{% else %}
+Oops! You are not supposed to be here!
+{% endif %}
 {% endblock %}

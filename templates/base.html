@@ -50,6 +50,10 @@
                         href="{% url 'book' %}">Book</a>
                     </li>
                     <li class="nav-item p-2">
+                        <a class="nav-link" aria-current="page"
+                        href="{% url 'edit_profile' %}">My Profile</a>
+                    </li>
+                    <li class="nav-item p-2">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     
@@ -75,7 +79,7 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer py-3">
+    <footer>
         <p class="m-0 text-center">Made by Phil Smith</p>
         <p class="m-0 text-center">Follow us: 
             <i class="fab fa-facebook-square ms-3"></i>

@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <section>
     <h1>
         Book a table
@@ -10,7 +11,6 @@
     <!-- Creating New Comments -->
     <div class="col-md-4 card mb-4 mt-3">
         <div class="card-body">
-            {% if user.is_authenticated %}
             <h3>Book your table</h3>
                 <p>Posting as: {{ user.username }}</p>
                     <form id="bookingForm" method="post"
@@ -21,7 +21,7 @@
                             class="btn btn-signup btn-lg">Submit</button>
                     </form>
             {% else %}
-                    <p>Log in to leave a comment</p>
+                    <p>Oops! You need to be signed in, in order to book a table.</p>
             {% endif %}
         </div>
     </div>

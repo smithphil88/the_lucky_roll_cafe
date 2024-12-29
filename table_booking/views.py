@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .models import Booking
-from .forms import BookingForm
+from .forms import BookingForm, SignUpForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
@@ -41,8 +41,14 @@ def book(request, template_name="book.html"):
     )
 
 class UserRegisterView(generic.CreateView):
-    form_class = UserCreationForm
+    form_class = SignUpForm
     template_name = 'account/signup.html'
     success_url = reverse_lazy('account_login')
-    
-# class User
+
+class UserEditView(generic.UpdateView):
+    form_class = UserChangeForm
+    template_name = 'edit_profile.html'
+    success_url = reverse_lazy('home')
+
+    def get_object(self):
+        return self.request.user

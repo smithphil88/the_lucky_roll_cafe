@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}Edit Profile{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+<h1 class="home-title">Hello! Edit your profile here</h1>
+<div class="form-group">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Update Profile</button>
+    </form>
+</div>
+
+
+{% endblock content %}

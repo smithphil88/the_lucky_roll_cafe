@@ -61,14 +61,6 @@ img {
     color: white;
     font-size: 20px;
 }
-
-footer {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-}
-
 .red-o {
     color: #E84610;
 }
