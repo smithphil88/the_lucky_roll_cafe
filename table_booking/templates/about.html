@@ -1,10 +1,76 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block extrahead %}
+
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+{%endblock%}
+
 {% block content %}
 {% if user.is_authenticated %}
 <body>
-    <h1>About page</h1>
-    <p>The Lucky Roll cafe is first and foremost an inclusive and welcoming cafe.</p>
+    <section>
+        <div class="background-about">
+            <h1>About The Lucky Roll</h1>
+            <p>The Lucky Roll cafe is first and foremost an inclusive and welcoming cafe.</p> 
+        </div>
+    </section>
+    <section class="row-fluid d-flex justify-content-center">
+        <div class="card-group col-lg-8 card-style">
+            <div class="card text-center shadow">
+                <img src="{% static 'images/lucky_roll_images/coffee-1.jpg' %}" alt="A professional coffee machine pouring two coffees" class="card-img-top">
+                <div class="card-body d-flex flex-column justify-content-center">
+                    <h2 class="display-6 font-brown">Our Menu</h2>
+                    <div class="emphasised">
+                        <p class="card-text">Vegan? Cakes? Coffee?<br>
+                            We have got you!<br>
+                        </p>
+                    </div>
+                    <button type="button" class="mb-0 btn btn-secondary btn-red" data-bs-toggle="modal" data-bs-target="#menu">
+                        See The Menu
+                    </button>
+                    <div class="modal fade modal-no-margin" id="menu" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
+                            <div class="modal-content bg-trans-brown col modal-no-margin">
+                                <div class="modal-header">
+                                    <h3 class="display-6 font-brown" id="menuModalLabel">Our Menu</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="{% static 'images/lucky_roll_images/menu.jpg' %}" alt="Our Menu" class="img-fluid menu-pic">
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary btn-brown" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card text-center shadow">
+                <img src="{% static 'images/lucky_roll_images/games-1.jpg' %}" alt="A game of monopoly" class="card-img-top">
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h2 class="display-6 font-brown">Book Now</h2>
+                    <div class="emphasised">
+                        <p class="card-text">Like to plan your game night?<br>
+                            There's always a table ready for your visit!
+                        </p>
+                    </div>
+
+                    <!-- Button redirecting to booking page -->
+                    <a href="{% url 'book' %}" class="d-flex flex-column justify-content-center">
+                        <button type="button" class="mb-0 btn btn-secondary btn-brown">
+                            Book Now
+                        </button>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 {% else %}
 Oops! You are not supposed to be here!

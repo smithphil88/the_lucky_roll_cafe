@@ -12,11 +12,6 @@ booking_form = BookingForm()
 
 # Create your views here.
 
-class BookingList(generic.ListView):
-    queryset = Booking.objects.filter(table_type=1).filter(num_of_guests=2)
-    template_name = "bookings_list.html"
-
-
 def about(request, template_name="base.html"):
     return render(
         request, template_name,

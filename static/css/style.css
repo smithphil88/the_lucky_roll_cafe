@@ -66,7 +66,7 @@ img {
 }
 
 .navbar {
-    background-color: #17452F;
+    background-color: #3A5A40;
 }
 
 .nav-link {
@@ -81,7 +81,7 @@ footer {
     width: 100%;
     left: 0;
     bottom: 0;
-    background-color: #17452F;
+    background-color: #3A5A40;
     color: white;
 }
 
@@ -104,6 +104,7 @@ footer {
 .jumbotron-fluid {
     margin: auto;
 }
+
 .light-bg {
     background-color: #fff;
 }
@@ -111,6 +112,23 @@ footer {
 .main-bg {
     background-color: #F9FAFC;
 }
+
+#bookingForm {
+    background-color: #E84610;
+}
+
+.background-about {
+    background-color: #DAD7CD;
+}
+
+.card-style {
+    margin: 5%;
+}
+
+.menu-pic {
+    height: 70vh;
+}
+
 
 .card {
     border: none;
