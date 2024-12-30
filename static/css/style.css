@@ -3,15 +3,7 @@
 body {
     min-height: 100vh;
     font-family: "Cinzel Decorative", sans-serif;
-    /* min-width: 100%;
-    min-height: 100%;
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-    background: url('/static/images/lucky_roll_images/cards.jpg');
-    background-size: cover;
-    background-position: 30%;
-    background-repeat: no-repeat;
-    background-attachment: fixed */ 
+    margin-bottom: 200px;
 }
 
 .bold {
@@ -129,12 +121,30 @@ footer {
     height: 70vh;
 }
 
-
-.card {
-    border: none;
-    background-color: transparent;
+.our-games-img {
+    height: 50vh;
 }
 
+.modal-no-margin {
+    margin: 0%!important;
+}
+
+.carousel-item img {
+    height: 50vh!important;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.bg-trans-black {
+    background-color: rgba(30, 19, 10, 0.5);
+    backdrop-filter: blur(4px);
+}
+
+.font-carousel {
+    color: #fff;
+}
+
+/* 
 .image-container {
     position: relative;
 }
@@ -259,4 +269,4 @@ footer {
 
 .approval {
     color: rgb(222, 146, 168);
-}
+} */
