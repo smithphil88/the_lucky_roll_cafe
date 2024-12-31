@@ -48,3 +48,18 @@ class UserEditView(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
+
+@login_required
+def delete_account(request):
+
+    user = get_object_or_404(User, id=request.user.id)
+    profile = User.objects.all()
+
+    try:
+        profile.delete()
+        user.delete()
+        messages.success(request, 'Your account has been deleted successfully!')
+        return redirect('home')
+    except Exception as e: 
+        messages.error(request, 'Oops! Something went wrong!')
+        return redirect('home')

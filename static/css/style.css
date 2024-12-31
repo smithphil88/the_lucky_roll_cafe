@@ -94,6 +94,16 @@ img {
     color:#DAD7CD;
 }
 
+.link {
+    color: black;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: black;
+    text-decoration: underline;
+}
+
 footer {
     position: fixed;
     width: 100%;
