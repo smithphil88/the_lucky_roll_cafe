@@ -8,14 +8,17 @@
 
 
 {% block content %}
-<h1 class="home-title">Hello! Edit your profile here</h1>
-<div class="form-group">
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Update Profile</button>
-    </form>
+<div class="justify-content-center">
+    <h1 class="home-title">My Profile</h1>
+    <div class="form-group">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Update Profile</button>
+        </form>
+    </div>
 </div>
+
 
 
 {% endblock content %}

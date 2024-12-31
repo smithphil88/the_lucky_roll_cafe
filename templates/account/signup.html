@@ -9,17 +9,22 @@
 {%endblock%}
 
 {% block content %}
-<h1 class="home-title">Hello! Please!</h1>
 
-<p>Have an account? Then please <a href="{{ login_url }}">sign in</a>.</p>
+<div class="row float-lg-start">
+    <div class="col-lg-12 mb-5 ms-2">
+        <h1 class="home-title">Welcome to The Lucky Roll Cafe</h1>
+        <p>If you have an account with us already, you can sign in <a href="{{ login_url }}">here</a>.</p>
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-    {% csrf_token %}
-    {{ form.as_p }}
-    {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-    {% endif %}
-    <button type="submit"> Register</button>
-</form>
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if redirect_field_value %}
+        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+        {% endif %}
+        <button type="submit btn"> Register</button>
+        </form>
+    </div>
+</div>
+
 
 {% endblock content %}

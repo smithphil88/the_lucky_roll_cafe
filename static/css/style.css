@@ -34,14 +34,23 @@ body {
     color: #222222;
     margin-top: 10px;
     border: solid 2px black;
-    background-color:#BBCDE5;
-    width: 40%;
+    background-color:#DAD7CD;
+    width: fit-content;
     text-align: center;
+    padding: 5px;
 }
 
-.row {
-    max-height: 50vh;
+.btn {
+    background-color: #DAD7CD;
 }
+
+.border {
+    border-width:3px !important;
+}
+
+/* .row {
+    max-height: 50vh;
+} */
 
 .column {
     float: left;
