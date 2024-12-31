@@ -30,6 +30,11 @@ body {
     margin: 5px;
 }
 
+.navbar-brand:hover {
+    color:#DAD7CD;
+    text-decoration: none;
+}
+
 .home-title {
     color: #222222;
     margin-top: 10px;
@@ -40,6 +45,18 @@ body {
     padding: 5px;
 }
 
+.profile-title {
+    color: #222222;
+    margin-top: 10px;
+    border: solid 2px black;
+    background-color:#DAD7CD;
+    text-align: center;
+    width:fit-content;
+    padding: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .btn {
     background-color: #DAD7CD;
 }
@@ -47,10 +64,6 @@ body {
 .border {
     border-width:3px !important;
 }
-
-/* .row {
-    max-height: 50vh;
-} */
 
 .column {
     float: left;
@@ -75,6 +88,10 @@ img {
     font-size: 22px;
     display: flex;
     justify-content: space-between;
+}
+
+.nav-link:hover {
+    color:#DAD7CD;
 }
 
 footer {
@@ -115,11 +132,15 @@ footer {
 }
 
 #bookingForm {
-    background-color: #E84610;
+    background-color: #DAD7CD;
 }
 
 .background-about {
     background-color: #DAD7CD;
+}
+
+.card-img-top {
+    min-height: 50vh;
 }
 
 .card-style {
@@ -152,6 +173,12 @@ footer {
 .font-carousel {
     color: #fff;
 }
+
+/* .link:hover,
+.link:active {
+    color: #21ef13;
+    text-decoration: underline;
+} */
 
 /* 
 .image-container {

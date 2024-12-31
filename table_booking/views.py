@@ -4,7 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from .models import Booking
-from .forms import BookingForm, SignUpForm
+from .forms import BookingForm, SignUpForm, EditProfileForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
@@ -41,9 +41,10 @@ class UserRegisterView(generic.CreateView):
     success_url = reverse_lazy('account_login')
 
 class UserEditView(generic.UpdateView):
-    form_class = UserChangeForm
+    form_class = EditProfileForm
     template_name = 'edit_profile.html'
     success_url = reverse_lazy('home')
 
     def get_object(self):
         return self.request.user
+

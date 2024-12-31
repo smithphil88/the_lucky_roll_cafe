@@ -4,12 +4,15 @@
 {% block content %}
 {% if user.is_authenticated %}
 <section>
-    <h1>
-        Book a table
-    </h1>
-    <p>Fill out the following form to book a table</p>
+    <div class="col-md-6 m-4">
+        <h1>
+            Book a table
+        </h1>
+        <p>Fill out the following form to book a table</p>
+    </div>
+    
     <!-- Creating New Comments -->
-    <div class="col-md-4 card mb-4 mt-3">
+    <div class="col-md-6 card border m-4 ">
         <div class="card-body">
             <h3>Book your table</h3>
                 <p>Booking a table as: {{ user.username }}</p>
