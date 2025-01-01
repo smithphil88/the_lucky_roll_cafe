@@ -3,19 +3,13 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<section class="bg-color">
-    <div class="col-md-6 m-4">
-        <h1>
-            Book a table
-        </h1>
-        <p>Fill out the following form to book a table</p>
-    </div>
-    
-    <!-- Creating New Comments -->
-    <div class="col-md-6 card border m-4 ">
+<section class="bg-color container">
+    <div class="row card border m-4 ">
         <div class="card-body">
-            <h3>Book your table</h3>
-                <p>Booking a table as: {{ user.username }}</p>
+            <div class="booking-title">
+                <h3>Book your table</h3>
+            </div>
+                <p>Welcome {{ user.username }}, please selected from the following options</p>
                     <form id="bookingForm" method="POST">
                         {{ booking_form | crispy }}
                         {% csrf_token %}

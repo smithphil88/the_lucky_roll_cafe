@@ -14,7 +14,7 @@ class BookingForm(forms.ModelForm):
 
     class Meta:
         model = Booking
-        fields = ('table_type','booking_date','time','num_of_guests',)
+        fields = ('table_type','booking_date','time','num_of_guests')
     
 
 class SignUpForm(UserCreationForm):
@@ -37,9 +37,10 @@ class EditProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    favourite_game = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     
     
     class Meta:
         model = User
-        fields =('username', 'email', 'first_name', 'last_name')
+        fields =('username', 'email', 'first_name', 'last_name', 'favourite_game')
 

@@ -48,7 +48,6 @@ class UserEditView(generic.UpdateView):
     def get_object(self):
         return self.request.user
 
-
 @login_required
 def delete_account(request):
 
