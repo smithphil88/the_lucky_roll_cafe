@@ -1,20 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 body {
-    min-height: 100vh;
     font-family: "Cinzel Decorative", sans-serif;
     margin-bottom: 200px;
 }
 
-.bold {
-    font-weight: bold;
+.height {
+    min-height: 100vh;
 }
 
-.brand {
-    font-family: "Cinzel Decorative", sans-serif;
-    font-size: 10 rem;
-    font-weight: 700;
-    color: blue;
+.bold {
+    font-weight: bold;
 }
 
 .navbar-brand {
@@ -145,7 +141,7 @@ footer {
     background-color: #DAD7CD;
 }
 
-.background-about {
+.bg-color {
     background-color: #DAD7CD;
 }
 
