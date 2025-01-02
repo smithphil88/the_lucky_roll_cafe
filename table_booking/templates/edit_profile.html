@@ -8,51 +8,62 @@
 
 
 {% block content %}
-<section class="container">
-    <div class="row">
-        <div class="mt-3 pb-1 border">
-            <h1 class="profile-title">My Profile</h1>
-            <div>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form.as_p }}
-                    <button type="submit" class="btn">Update Profile</button>
-                </form>
-            </div>
-            <div>
-                <button type="button" class="btn-danger px-3 mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#delete">Delete account</button>
-
-                <div class="modal modal-no-margin fade" id="delete" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
-                        <div class="modal-content col modal-no-margin">
-                            <div class="modal-header">
-                                <h2 class="display-4 m-5" id="DelModalLabel">Confirm your choice</h2>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body text-center">
-                                <h2 class="display-4 m-5" id="DelModalLabel">Are you sure?</h2>
-                                <p class="font-white emphasised m-5">If you delete your account you will loose access to 
-                                both your profile and your bookings!
-                                </p>
-                                <div class="row d-flex justify-content-center">
-                                    <a href="{% url 'deleteaccount' %}" class="col-lg-3">
-                                        <button type="button" class="btn btn-danger px-3 m-5">Yes, delete!</button>
-                                    </a>
-                                    <div class="col-lg-3">
-                                        <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
-                                    </div>                                                
+<body>
+    <section class="container">
+        <div class="row">
+            <div class="mt-3 pb-1 border">
+                <h1 class="profile-title">{{user.first_name}}'s Profile</h1>
+                <div>
+                    <form method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn">Update Profile</button>
+                    </form>
+                </div>
+                <div class="mt-2">
+                    <a class="link" href="{% url 'account_reset_password' %}">Reset Password</a>
+                </div>
+                <div>
+                    <button type="button" class="btn-danger px-3 mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#delete">Delete account</button>
+    
+                    <div class="modal modal-no-margin fade" id="delete" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
+                            <div class="modal-content col modal-no-margin">
+                                <div class="modal-header">
+                                    <h2 class="display-4 m-5" id="DelModalLabel">Confirm your choice</h2>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body text-center">
+                                    <h2 class="display-4 m-5" id="DelModalLabel">Are you sure?</h2>
+                                    <p class="font-white emphasised m-5">If you delete your account you will loose access to 
+                                    both your profile and your bookings!
+                                    </p>
+                                    <div class="row d-flex justify-content-center">
+                                        <a href="{% url 'deleteaccount' %}" class="col-lg-3">
+                                            <button type="button" class="btn btn-danger px-3 m-5">Yes, delete!</button>
+                                        </a>
+                                        <div class="col-lg-3">
+                                            <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
+                                        </div>                                                
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
-                    
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <section class="container">
+        <div class="row">
+            <div class="mt-3 pb-1 border">
+                <h2 class="profile-title">{{user.first_name}}'s bookings</h2>
+                <p>You have booked a {{user.table_type}}</p>
+            </div>
+        </div>
 
-
-
+    </section>
+</body>
 
 {% endblock content %}

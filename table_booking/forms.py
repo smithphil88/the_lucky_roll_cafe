@@ -10,11 +10,18 @@ from django_summernote.widgets import SummernoteWidget
 
 
 class BookingForm(forms.ModelForm):
-    
+    def __init__(self, *args, **kwargs):
+
+        super().__init__(*args, **kwargs)
+
+    booking_date = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)
+    time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
+    additional_message = forms.CharField(max_length=400, widget=SummernoteWidget(), required=False)
+    table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
 
     class Meta:
         model = Booking
-        fields = ('table_type','booking_date','time','num_of_guests')
+        fields = ('table_type','booking_date','time', 'num_of_guests', 'additional_message')
     
 
 class SignUpForm(UserCreationForm):
@@ -33,14 +40,15 @@ class SignUpForm(UserCreationForm):
 
 
 class EditProfileForm(UserChangeForm):
+    password = None
     first_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
-    favourite_game = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    # favourite_game = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     
     
     class Meta:
         model = User
-        fields =('username', 'email', 'first_name', 'last_name', 'favourite_game')
+        fields =('username', 'email', 'first_name', 'last_name',)
 

@@ -1,14 +1,13 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views import generic, View
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
-from .models import Booking
+from django.views import generic, View
+from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from .models import Booking, UserProfile
 from .forms import BookingForm, SignUpForm, EditProfileForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 
-booking_form = BookingForm()
 
 # Create your views here.
 
@@ -27,13 +26,36 @@ def about(request, template_name="about.html"):
         request, template_name,
     )
 
-def book(request, template_name="book.html"):
+# def book(request, template_name="book.html"):
+#     return render(
+#         request, template_name,
+#         {
+#             "booking_form": booking_form
+#         }
+#     )
+
+def booking_form(request):
+
+    template_name = 'book.html'
+    form = BookingForm(data=request.POST)
+    
+    if request.method == 'POST':        
+        
+        if form.is_valid():
+            print('form is valid')
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
+            messages.success(request, 'Thank you! Your booking has been saved! You can access it through "My Profile" page.')
+            return redirect('home')
+        else:
+            print('form is not valid')
+            messages.error(request, form.errors)
+            return redirect(booking_form)
+
     return render(
-        request, template_name,
-        {
-            "booking_form": booking_form
-        }
-    )
+                request, template_name, {'form': form},
+                )
 
 class UserRegisterView(generic.CreateView):
     form_class = SignUpForm
@@ -52,10 +74,8 @@ class UserEditView(generic.UpdateView):
 def delete_account(request):
 
     user = get_object_or_404(User, id=request.user.id)
-    profile = User.objects.all()
 
     try:
-        profile.delete()
         user.delete()
         messages.success(request, 'Your account has been deleted successfully!')
         return redirect('home')

@@ -1,25 +1,30 @@
 {% extends "base.html" %}
+
+{% load crispy_forms_filters %}
 {% load crispy_forms_tags %}
 
 {% block content %}
 {% if user.is_authenticated %}
-<section class="bg-color container">
-    <div class="row card border m-4 ">
-        <div class="card-body">
-            <div class="booking-title">
-                <h3>Book your table</h3>
+<body>
+    <section class="bg-color container">
+        <div class="row card border m-4 ">
+            <div class="card-body">
+                <div class="booking-title">
+                    <h3>Book your table</h3>
+                </div>
+                    <p>Welcome {{ user.first_name }}, please selected from the following options</p>
+                        <form method="POST" action="{% url 'book' %}">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button id="submitButton" type="submit"
+                                class="btn btn-signup btn-lg">Submit</button>
+                        </form>
+                {% else %}
+                        <p>Oops! You need to be signed in, in order to book a table.</p>
+                {% endif %}
             </div>
-                <p>Welcome {{ user.username }}, please selected from the following options</p>
-                    <form id="bookingForm" method="POST">
-                        {{ booking_form | crispy }}
-                        {% csrf_token %}
-                        <button id="submitButton" type="submit"
-                            class="btn btn-signup btn-lg">Submit</button>
-                    </form>
-            {% else %}
-                    <p>Oops! You need to be signed in, in order to book a table.</p>
-            {% endif %}
         </div>
-    </div>
-</section>
+    </section>
+</body>
+
 {% endblock %}
