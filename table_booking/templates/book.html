@@ -6,12 +6,12 @@
 {% block content %}
 {% if user.is_authenticated %}
 <body>
-    <section class="bg-color container">
-        <div class="row card border m-4 ">
-            <div class="card-body">
-                <div class="booking-title">
-                    <h3>Book your table</h3>
-                </div>
+    <section class="container mb-5">
+        <div class="jumbotron-fluid about-title mt-2">
+            <h1>Book your table</h1>
+        </div>
+        <div class="row card border m-4">
+            <div class="card-body mb-5">
                     <p>Welcome {{ user.first_name }}, please selected from the following options</p>
                         <form method="POST" action="{% url 'book' %}">
                             {% csrf_token %}

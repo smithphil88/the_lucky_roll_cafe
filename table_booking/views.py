@@ -9,7 +9,7 @@ from django.contrib import messages
 from django.contrib.auth.models import User
 
 
-# Create your views here.
+# My views
 
 def about(request, template_name="base.html"):
     return render(
@@ -25,14 +25,6 @@ def about(request, template_name="about.html"):
     return render(
         request, template_name,
     )
-
-# def book(request, template_name="book.html"):
-#     return render(
-#         request, template_name,
-#         {
-#             "booking_form": booking_form
-#         }
-#     )
 
 def booking_form(request):
 
