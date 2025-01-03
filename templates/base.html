@@ -69,6 +69,21 @@
             </div>
         </div>
     </nav>
+    
+    {% if messages %}
+
+            {% for message in messages %}
+                <div class="container-fluid p-0">
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" id="msg">
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="True"></span>
+                        </button>
+                        {{ message | safe }}
+                    </div>
+                </div>
+            {% endfor %}
+
+        {% endif %}
 
     <main class="height bg-color">
 

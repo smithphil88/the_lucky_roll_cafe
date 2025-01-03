@@ -9,6 +9,14 @@ body {
     font-weight: bold;
 }
 
+.alert {
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    background-color: #DAD7CD;
+}
+
 .navbar-brand {
     font-family: "Cinzel Decorative", sans-serif;
     font-size: 30px;
@@ -68,8 +76,14 @@ body {
     padding: 20px;
 }
 
+.paragraph {
+    margin-left: auto;
+    margin-right: auto;
+}
 .btn {
     background-color: #A3B18A;
+    color: white;
+    border: solid 1px black;
 }
 
 .border {

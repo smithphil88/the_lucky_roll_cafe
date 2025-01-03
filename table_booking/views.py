@@ -66,6 +66,7 @@ class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'edit_profile.html'
     success_url = reverse_lazy('home')
+    # messages.success(request, 'Your profile has been updated')
 
     def get_object(self):
         return self.request.user
