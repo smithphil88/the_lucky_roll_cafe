@@ -56,12 +56,16 @@ class UserRegisterView(generic.CreateView):
 
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
-    template_name = 'edit_profile.html'
+    template_name = 'my_profile.html'
     success_url = reverse_lazy('home')
     # messages.success(request, 'Your profile has been updated')
 
     def get_object(self):
         return self.request.user
+
+    
+
+
 
 @login_required
 def delete_account(request):
@@ -75,3 +79,18 @@ def delete_account(request):
     except Exception as e: 
         messages.error(request, 'Oops! Something went wrong!')
         return redirect('home')
+
+class MyBookingsViews(View):
+
+    def get(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            user = request.user
+            user_bookings = Booking.objects.filter(user=user)
+            template_name="my_bookings.html"
+            
+            return render(
+                request, template_name, 
+                {
+                    "user_bookings":user_bookings
+                    }
+            )

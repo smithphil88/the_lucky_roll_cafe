@@ -61,9 +61,10 @@
             <div class="row">
                 <div class="jumbotron-fluid about-title mt-2">
                     <h2>{{user.first_name}}'s bookings</h2>
-                    <p>You currently have {booking.table_type} on </p>
+                    {% for booking in user_bookings %}
+                    Username: {{booking.user}}
+                    {% endfor %}
                 </div>
-                
             </div>
         </div>
     </section>

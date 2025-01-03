@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}My Bookings{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+
+{% block content %}
+<body>
+    <section>
+        <div class="row">
+            <div class="jumbotron-fluid about-title mt-2">
+                <h3 class="mb-0">My Bookings</h3>
+            </div>
+            <div class="row">
+                <p class="d-flex justify-content-center mt-3">Check out your bookings below and edit or delete them if there is a mistake</p>
+            </div>
+        </div>
+        <div>
+            {% for booking in user_bookings %}
+            <p>Username: {{booking.user}}</p>
+            <p>Date: {{booking.booking_date}}</p>
+            <p>Time: {{booking.time}}</p>
+            <p>Guests: {{booking.num_of_guests}}</p>
+
+            {% endfor %}
+            
+            <a href="{% url 'book' %}" class="d-flex justify-content-center mt-3">
+                <button type="button" class="btn">Edit</button></a>
+            
+        </div>
+    </section>
+</body>
+
+
+
+
+
+<!-- <div>
+    {% for booking in user_bookings %}
+    
+
+    User:{{booking.user}}
+    First Name: {{booking.first_name}}
+    Last Name:{{booking.last_name}}
+    Guests:  
+    {% endfor %}
+</div> -->
+
+{% endblock content %}
