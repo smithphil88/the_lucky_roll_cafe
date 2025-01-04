@@ -7,6 +7,7 @@ from django.forms import ModelForm, CheckboxSelectMultiple, TextInput, NumberInp
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django_summernote.widgets import SummernoteWidget
+from autoslug import AutoSlugField
 
 
 class BookingForm(forms.ModelForm):
@@ -18,10 +19,13 @@ class BookingForm(forms.ModelForm):
     time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
     additional_message = forms.CharField(max_length=400, widget=SummernoteWidget(), required=False)
     table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
+    slug = AutoSlugField(max_length=70, unique=True) 
+
 
     class Meta:
         model = Booking
         fields = ('table_type','booking_date','time', 'num_of_guests', 'additional_message')
+        read_only = ['slug']
     
 
 class SignUpForm(UserCreationForm):

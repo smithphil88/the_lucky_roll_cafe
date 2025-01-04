@@ -19,16 +19,29 @@
             </div>
         </div>
         <div>
-            {% for booking in user_bookings %}
-            <p>Username: {{booking.user}}</p>
-            <p>Date: {{booking.booking_date}}</p>
-            <p>Time: {{booking.time}}</p>
-            <p>Guests: {{booking.num_of_guests}}</p>
-
-            {% endfor %}
+            <div class="card border">
+                {% for booking in user_bookings %}
+                <p>Username: {{booking.user}}</p>
+                <p>Date: {{booking.booking_date}}</p>
+                <p>Time: {{booking.time}}</p>
+                <p>Guests: {{booking.num_of_guests}}</p>
+                <p>Added Information: {{booking.additional_message}}</p>
+                <hr>
+                
+            </div>
             
-            <a href="{% url 'book' %}" class="d-flex justify-content-center mt-3">
-                <button type="button" class="btn">Edit</button></a>
+            <div class="row">
+                <div class="col">
+                    <a href="{% url 'book' %}">
+                        <button type="button" class="btn">New Booking</button></a>
+                </div>
+                <div class="col">
+                    <a href="{% url 'edit_my_bookings' booking.slug %}">
+                        <button type="button" class="btn">Edit Bookings</button></a>
+                </div>
+                {% endfor %}
+            </div>
+            
             
         </div>
     </section>

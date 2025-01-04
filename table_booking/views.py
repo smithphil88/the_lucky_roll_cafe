@@ -2,11 +2,13 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.views import generic, View
+from django.views.generic.edit import UpdateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Booking, UserProfile
 from .forms import BookingForm, SignUpForm, EditProfileForm
 from django.contrib import messages
 from django.contrib.auth.models import User
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 # My views
@@ -30,18 +32,17 @@ def booking_form(request):
 
     template_name = 'book.html'
     form = BookingForm(data=request.POST)
+    slug = form.slug
     
     if request.method == 'POST':        
         
         if form.is_valid():
-            print('form is valid')
             booking = form.save(commit=False)
             booking.user = request.user
             booking.save()
-            messages.success(request, 'Thank you! Your booking has been saved! You can access it through "My Profile" page.')
+            messages.success(request, 'Thanks, you can see your booking on the "My Bookings" page.')
             return redirect('home')
         else:
-            print('form is not valid')
             messages.error(request, form.errors)
             return redirect(booking_form)
 
@@ -62,10 +63,6 @@ class UserEditView(generic.UpdateView):
 
     def get_object(self):
         return self.request.user
-
-    
-
-
 
 @login_required
 def delete_account(request):
@@ -88,9 +85,38 @@ class MyBookingsViews(View):
             user_bookings = Booking.objects.filter(user=user)
             template_name="my_bookings.html"
             
+            
             return render(
                 request, template_name, 
                 {
                     "user_bookings":user_bookings
                     }
             )
+
+class EditBookingsView(UpdateView, LoginRequiredMixin):
+    
+    model = Booking
+    form_class = BookingForm
+    template_name = 'edit_booking.html'
+    success_url = reverse_lazy('home')
+    
+    def form_valid(self, form):
+            form.instance.user = user.objects.get(
+            user=self.request.user
+            )
+            messages.success(self.request, 'Thank you! Your booking has been updated!')
+            return super().form_valid(form)
+    
+    
+    
+    
+    
+        # def get(self, request, *args, **kwargs):
+    #     if request.user.is_authenticated:
+    #         form = BookingForm(data=request.POST)
+    #         user = request.user
+    #         booking = Booking.objects.filter(user=user)
+    #         print(booking)
+
+            
+    #         return render(request, self.template_name, {'form':form})
