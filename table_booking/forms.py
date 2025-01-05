@@ -11,22 +11,26 @@ from autoslug import AutoSlugField
 
 
 class BookingForm(forms.ModelForm):
+
     def __init__(self, *args, **kwargs):
 
         super().__init__(*args, **kwargs)
 
     booking_date = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)
     time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
-    additional_message = forms.CharField(max_length=400, widget=SummernoteWidget(), required=False)
+    additional_message = forms.CharField(max_length=200, widget=SummernoteWidget(), required=False)
     table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
-    slug = AutoSlugField(max_length=70, unique=True) 
-
-
+    # num_of_guests = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control', 'type':'number'}), required=False)
+    num_of_guests = forms.IntegerField(label="Guests",
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number', 'min': 1, 'max': 12}),
+        required=False
+    )
+    slug = AutoSlugField(max_length=70, unique=True)
+    
     class Meta:
         model = Booking
         fields = ('table_type','booking_date','time', 'num_of_guests', 'additional_message')
         read_only = ['slug']
-    
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))

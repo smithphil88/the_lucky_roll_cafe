@@ -51,11 +51,11 @@
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link" aria-current="page"
-                        href="{% url 'my_profile' %}">My Profile</a>
+                        href="{% url 'my_profile' %}">Profile</a>
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link" aria-current="page"
-                        href="{% url 'my_bookings' %}">My Booking</a>
+                        href="{% url 'my_bookings' %}">My Bookings</a>
                     </li>
                     <li class="nav-item p-2">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" class="test" aria-current="page" href="{% url 'account_logout' %}">Logout</a>

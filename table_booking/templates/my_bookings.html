@@ -18,29 +18,34 @@
                 <p class="d-flex justify-content-center mt-3">Check out your bookings below and edit or delete them if there is a mistake</p>
             </div>
         </div>
-        <div>
+        <div class="m-3">
             <div class="card border">
                 {% for booking in user_bookings %}
-                <p>Username: {{booking.user}}</p>
-                <p>Date: {{booking.booking_date}}</p>
-                <p>Time: {{booking.time}}</p>
-                <p>Guests: {{booking.num_of_guests}}</p>
-                <p>Added Information: {{booking.additional_message}}</p>
-                <hr>
+                <p class="m-3">Username: {{booking.user}}</p>
+                <p class="m-3">Date: {{booking.booking_date}}</p>
+                <p class="m-3">Time: {{booking.time}}</p>
+                <p class="m-3">Guests: {{booking.num_of_guests}}</p>
+                <p class="m-3">Added Information: {{booking.additional_message}}</p>
                 
+                <div class="row">
+                    <div class="col m-1">
+                        <a href="{% url 'book' %}">
+                            <button type="button" class="btn">New Booking</button></a>
+                    </div>
+                    <div class="col m-1">
+                        <a href="{% url 'edit_my_bookings' booking.slug %}">
+                            <button type="button" class="btn">Edit Booking</button></a>
+                    </div>
+                    <div class="col m-1">
+                        <a href="{% url 'deletebooking' booking.slug %}">
+                            <button type="button" class="btn-danger">Delete Booking</button></a>
+                    </div>
+                    <hr class="mt-1">
+                    {% endfor %}
+                </div>
             </div>
             
-            <div class="row">
-                <div class="col">
-                    <a href="{% url 'book' %}">
-                        <button type="button" class="btn">New Booking</button></a>
-                </div>
-                <div class="col">
-                    <a href="{% url 'edit_my_bookings' booking.slug %}">
-                        <button type="button" class="btn">Edit Bookings</button></a>
-                </div>
-                {% endfor %}
-            </div>
+            
             
             
         </div>

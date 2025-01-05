@@ -28,28 +28,6 @@ def about(request, template_name="about.html"):
         request, template_name,
     )
 
-def booking_form(request):
-
-    template_name = 'book.html'
-    form = BookingForm(data=request.POST)
-    slug = form.slug
-    
-    if request.method == 'POST':        
-        
-        if form.is_valid():
-            booking = form.save(commit=False)
-            booking.user = request.user
-            booking.save()
-            messages.success(request, 'Thanks, you can see your booking on the "My Bookings" page.')
-            return redirect('home')
-        else:
-            messages.error(request, form.errors)
-            return redirect(booking_form)
-
-    return render(
-                request, template_name, {'form': form},
-                )
-
 class UserRegisterView(generic.CreateView):
     form_class = SignUpForm
     template_name = 'account/signup.html'
@@ -59,7 +37,6 @@ class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'my_profile.html'
     success_url = reverse_lazy('home')
-    # messages.success(request, 'Your profile has been updated')
 
     def get_object(self):
         return self.request.user
@@ -77,6 +54,29 @@ def delete_account(request):
         messages.error(request, 'Oops! Something went wrong!')
         return redirect('home')
 
+
+def booking_form(request):
+
+    template_name = 'book.html'
+    form = BookingForm(data=request.POST)
+    slug = form.slug
+    
+    if request.method == 'POST':        
+        
+        if form.is_valid():
+            booking = form.save(commit=False)
+            booking.user = request.user
+            booking.save()
+            messages.success(request, 'Thanks, you can see your booking on the "My Bookings" page.')
+            return redirect('my_bookings')
+        else:
+            messages.error(request, form.errors)
+            return redirect(booking_form)
+
+    return render(
+                request, template_name, {'form': form},
+                )
+                
 class MyBookingsViews(View):
 
     def get(self, request, *args, **kwargs):
@@ -98,25 +98,24 @@ class EditBookingsView(UpdateView, LoginRequiredMixin):
     model = Booking
     form_class = BookingForm
     template_name = 'edit_booking.html'
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('my_bookings')
     
-    def form_valid(self, form):
+    def edit_booking(self, form):
             form.instance.user = user.objects.get(
-            user=self.request.user
+                user=self.request.user
             )
             messages.success(self.request, 'Thank you! Your booking has been updated!')
-            return super().form_valid(form)
-    
-    
-    
-    
-    
-        # def get(self, request, *args, **kwargs):
-    #     if request.user.is_authenticated:
-    #         form = BookingForm(data=request.POST)
-    #         user = request.user
-    #         booking = Booking.objects.filter(user=user)
-    #         print(booking)
+            return super().edit_booking(form)
 
-            
-    #         return render(request, self.template_name, {'form':form})
+def delete_booking(request, slug):
+
+    booking = get_object_or_404(Booking, slug=slug)
+
+    try:
+        booking.delete()
+        messages.warning(request, 'Your booking has been cancelled')
+
+        return redirect('home')
+    except Exception as e: 
+        messages.error(request, 'Oops! Something went wrong!')
+        return redirect('home')
