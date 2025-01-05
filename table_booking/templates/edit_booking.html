@@ -15,12 +15,12 @@
                 <h3 class="mb-0">Edit My Bookings</h3>
             </div>
             <div class="row">
-                <p class="d-flex justify-content-center mt-3">Check out your bookings below and edit or delete them if there is a mistake</p>
+                <p class="d-flex justify-content-center mt-3">Check out your booking below and make any changes.</p>
             </div>
         </div>
         <div>
             <div class="card border m-3">
-                <form method="POST">
+                <form method="POST" class="m-2">
                     {% csrf_token %}
                     {{ form.as_p }}
                     <button id="submitButton" type="submit"

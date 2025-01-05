@@ -11,7 +11,7 @@
             <h1>Book your table</h1>
         </div>
         <div class="row card border m-4">
-            <div class="card-body mb-5">
+            <div class="card-body">
                     <p>Welcome {{ user.username }}, please selected from the following options</p>
                         <form method="POST" action="{% url 'book' %}">
                             {% csrf_token %}

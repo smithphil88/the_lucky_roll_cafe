@@ -15,7 +15,7 @@
                 <h3 class="mb-0">My Bookings</h3>
             </div>
             <div class="row">
-                <p class="d-flex justify-content-center mt-3">Check out your bookings below and edit or delete them if there is a mistake</p>
+                <p class="d-flex justify-content-center mt-3">Check out your bookings below. Here you can create a new booking, edit current bookings or delete bookings</p>
             </div>
         </div>
         <div class="m-3">
@@ -27,7 +27,7 @@
                 <p class="m-3">Guests: {{booking.num_of_guests}}</p>
                 <p class="m-3">Added Information: {{booking.additional_message}}</p>
                 
-                <div class="row">
+                <div class="row d-flex justify-content-center">
                     <div class="col m-1">
                         <a href="{% url 'book' %}">
                             <button type="button" class="btn">New Booking</button></a>
@@ -37,34 +37,36 @@
                             <button type="button" class="btn">Edit Booking</button></a>
                     </div>
                     <div class="col m-1">
-                        <a href="{% url 'deletebooking' booking.slug %}">
-                            <button type="button" class="btn-danger">Delete Booking</button></a>
+                        <button type="button" class="btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking">Delete Booking</button>
+                        <div class="modal modal-no-margin fade" id="deletebooking" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
+                                <div class="modal-content col modal-no-margin">
+                                    <div class="modal-header d-flex justify-content-center">
+                                        <h2 class="display-4 m-5" id="DelModalLabel">Confirm your choice</h2>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body text-center">
+                                        <h2 class="display-4 m-5" id="DelModalLabel">Are you sure?</h2>
+                                        <p class="font-white emphasised m-5">This will delete this booking?</p>
+                                        <div class="row d-flex justify-content-center">
+                                            <a href="{% url 'deletebooking' booking.slug %}">
+                                                <button type="button" class="btn">Yes, delete</button>
+                                            </a>
+                                            <div class="col-lg-3">
+                                                <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <hr class="mt-1">
                     {% endfor %}
                 </div>
             </div>
-            
-            
-            
-            
         </div>
     </section>
 </body>
-
-
-
-
-
-<!-- <div>
-    {% for booking in user_bookings %}
-    
-
-    User:{{booking.user}}
-    First Name: {{booking.first_name}}
-    Last Name:{{booking.last_name}}
-    Guests:  
-    {% endfor %}
-</div> -->
 
 {% endblock content %}

@@ -20,8 +20,7 @@ class BookingForm(forms.ModelForm):
     time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
     additional_message = forms.CharField(max_length=200, widget=SummernoteWidget(), required=False)
     table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
-    # num_of_guests = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control', 'type':'number'}), required=False)
-    num_of_guests = forms.IntegerField(label="Guests",
+    num_of_guests = forms.IntegerField(label="Guests (max-12 people)",
         widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number', 'min': 1, 'max': 12}),
         required=False
     )
@@ -53,10 +52,10 @@ class EditProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
-    # favourite_game = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
+    
     
     
     class Meta:
         model = User
-        fields =('username', 'email', 'first_name', 'last_name',)
+        fields =('username', 'email', 'first_name', 'last_name')
 
