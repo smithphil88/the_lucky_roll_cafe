@@ -2,6 +2,8 @@ import datetime
 from django.utils import timezone
 from .models import UserProfile, Booking, TABLE_TYPE, TIME_SLOTS
 from django import forms
+from django.core.exceptions import ValidationError
+from datetime import date
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
@@ -13,7 +15,7 @@ from autoslug import AutoSlugField
 
 class BookingForm(forms.ModelForm):
 
-    booking_date = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)
+    booking_date = forms.DateField(widget=forms.SelectDateWidget, required=False)
     time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
     additional_message = forms.CharField(max_length=200, widget=SummernoteWidget(), required=False)
     table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
@@ -22,6 +24,14 @@ class BookingForm(forms.ModelForm):
         required=False
     )
     slug = AutoSlugField(max_length=70, unique=True)
+
+    def clean_booking_date(self):
+        booking_date = self.cleaned_data.get('booking_date')
+        
+        if booking_date is not None and booking_date < datetime.date.today():
+            raise forms.ValidationError("Booking date cannot be in the past")
+        
+        return booking_date
     
     class Meta:
         model = Booking
@@ -54,3 +64,4 @@ class EditProfileForm(UserChangeForm):
         model = User
         fields =('username', 'email', 'first_name', 'last_name')
 
+# (widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)

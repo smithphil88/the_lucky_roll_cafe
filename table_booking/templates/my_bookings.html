@@ -8,19 +8,28 @@
 
 
 {% block content %}
-<body>
+
     <section class="content-wrap">
         <div class="row">
             <div class="jumbotron-fluid about-title mt-2">
                 <h3 class="mb-0">My Bookings</h3>
             </div>
+            {% if user_bookings %}
+                
             <div class="row">
                 <p class="d-flex justify-content-center mt-3">Check out your bookings below. Here you can create a new booking, edit current bookings or delete bookings</p>
+                <div class="col m-1 center">
+                    <a href="{% url 'book' %}" class="link" aria-label="create new booking">
+                        Create new booking</a>
+                </div>
             </div>
         </div>
         <div class="m-3">
             <div class="card border">
+
+                
                 {% for booking in user_bookings %}
+
                 <p class="m-3">Username: {{booking.user}}</p>
                 <p class="m-3">Date: {{booking.booking_date}}</p>
                 <p class="m-3">Time: {{booking.time}}</p>
@@ -28,17 +37,13 @@
                 <p class="m-3">Added Information: {{booking.additional_message}}</p>
                 
                 <div class="row d-flex justify-content-center">
-                    <div class="col m-1">
-                        <a href="{% url 'book' %}">
-                            <button type="button" class="btn">New Booking</button></a>
+                    <div class="col-2 center m-1">
+                        <a href="{% url 'edit_my_bookings' booking.slug %}" class=" btn link">
+                            Edit Booking</a>
                     </div>
-                    <div class="col m-1">
-                        <a href="{% url 'edit_my_bookings' booking.slug %}">
-                            <button type="button" class="btn">Edit Booking</button></a>
-                    </div>
-                    <div class="col m-1">
-                        <button type="button" class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking">Delete Booking</button>
-                        <div class="modal modal-no-margin fade" id="deletebooking" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
+                    <div class=" col-2 center m-1">
+                        <button type="button" class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking-{{booking.id}}">Delete Booking</button>
+                        <div class="modal modal-no-margin fade" id="deletebooking-{{booking.id}}" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
                                 <div class="modal-content col modal-no-margin">
                                     <div class="modal-header d-flex justify-content-center">
@@ -50,7 +55,7 @@
                                         <p class="font-white emphasised m-5">This will delete this booking?</p>
                                         <div class="row d-flex justify-content-center">
                                             <a href="{% url 'deletebooking' booking.slug %}">
-                                                <button type="button" class="btn btn-danger">Yes, delete</button>
+                                                Yes, delete
                                             </a>
                                             <div class="col-lg-3">
                                                 <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
@@ -63,10 +68,18 @@
                     </div>
                     <hr class="mt-1">
                     {% endfor %}
+                    {% else %}
+                    <div class="center mt-5">
+                        <p>There are no bookings yet, click below to make one.</p>
+                        <a href="{% url 'book' %}" class="link" aria-label="create new booking">
+                            Create New Booking</a>
+                    </div>
+                        
+                    {% endif %} 
                 </div>
             </div>
         </div>
     </section>
-</body>
+
 
 {% endblock content %}

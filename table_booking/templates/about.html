@@ -10,7 +10,7 @@
 
 {% block content %}
 {% if user.is_authenticated %}
-<body>
+
     <section>
         <div class="jumbotron-fluid about-title mt-5">
             <h1>About The Lucky Roll Cafe</h1>
@@ -37,10 +37,8 @@
                     </div>
 
                     <!-- Button to booking page -->
-                    <a href="{% url 'book' %}" class="d-flex flex-column justify-content-center nav-link">
-                        <button type="button" class="mb-0 btn">
+                    <a href="{% url 'book' %}" class="d-flex flex-column btn book-link justify-content-center">
                             Book Now
-                        </button>
                     </a>
                 </div>
             </div>
@@ -131,7 +129,7 @@
                         <div class="modal-dialog modal-dialog-centered modal-fullscreen modal-no-margin">
                             <div class="modal-content col modal-no-margin">
                                 <div class="modal-header">
-                                    <h3 class="display-6" id="menuModalLabel">Our Menu</h1>
+                                    <h3 class="display-6" id="menuModalLabel">Our Menu</h3>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
@@ -160,4 +158,3 @@
 </section>
 {% endif %}
 {% endblock %}
-</body>

@@ -128,7 +128,7 @@ img {
 }
 
 .nav-link {
-    color: white!important;
+    color: white;
     font-size: 22px;
 }
 
@@ -139,7 +139,7 @@ img {
 }
 
 .nav-link:hover {
-    color:#DAD7CD;
+    color:#DAD7CD
 }
 
 .nav-link:focus {
@@ -159,6 +159,10 @@ img {
 .link:hover {
     color: black;
     text-decoration: underline;
+}
+
+.book-link {
+    color: #fff;
 }
 
 .hero-image-1 {
