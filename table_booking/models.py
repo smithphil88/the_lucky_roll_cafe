@@ -12,8 +12,7 @@ TIME_SLOTS = (
         ('2pm-4pm','2pm-4pm'),
         ('3pm-5pm','3pm-5pm'),
         ('4pm-6pm','4pm-6pm'),
-        ('5pm-7pm','5pm-7pm'),
-        
+        ('5pm-7pm','5pm-7pm'), 
 )
 
 TABLE_TYPE = (
@@ -53,3 +52,5 @@ class UserProfile(models.Model):
         def __str__(self):
                 if self.user:
                         return self.email
+
+validators=[MinValueValidator(datetime.date.today)]

@@ -1,9 +1,10 @@
 import datetime
+from django.utils import timezone
 from .models import UserProfile, Booking, TABLE_TYPE, TIME_SLOTS
 from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
-from django.forms import ModelForm, CheckboxSelectMultiple, TextInput, NumberInput
+from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Submit
 from django_summernote.widgets import SummernoteWidget
@@ -11,10 +12,6 @@ from autoslug import AutoSlugField
 
 
 class BookingForm(forms.ModelForm):
-
-    def __init__(self, *args, **kwargs):
-
-        super().__init__(*args, **kwargs)
 
     booking_date = forms.DateField(widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)
     time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
@@ -52,8 +49,6 @@ class EditProfileForm(UserChangeForm):
     last_name = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     username = forms.CharField(max_length=100, widget=forms.TextInput(attrs={'class':'form-control'}))
-    
-    
     
     class Meta:
         model = User
