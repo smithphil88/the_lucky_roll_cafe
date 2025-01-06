@@ -4,6 +4,7 @@ body {
     position: relative;
     min-height: 100%;
     font-family: "Modern Antiqua", sans-serif;
+    overflow-x: hidden;
 }
 
 footer {
