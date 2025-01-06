@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Modern+Antiqua&display=swap');
 
 body {
-    min-height: 140%;
+    position: relative;
+    min-height: 100%;
     font-family: "Modern Antiqua", sans-serif;
+}
+
+footer {
+    position:absolute;
+    height: 5.5rem;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    background-color: #3A5A40;
+    color: white;
+}
+
+.content-wrap {
+    padding-bottom: 5.5rem;
 }
 
 .bold {
@@ -13,7 +28,7 @@ body {
     z-index: 999999;
     position: fixed;
     top: 0;
-    width: 100vw;
+    width: 40vw;
     background-color: #A3B18A;
     color: #fff;
 }
@@ -126,6 +141,11 @@ img {
     color:#DAD7CD;
 }
 
+.nav-link:focus {
+    color: #fff;
+    background-color: #A3B18A;
+}
+
 .center {
     text-align: center;
 }
@@ -138,15 +158,6 @@ img {
 .link:hover {
     color: black;
     text-decoration: underline;
-}
-
-footer {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    bottom: 0;
-    background-color: #3A5A40;
-    color: white;
 }
 
 .hero-image-1 {
@@ -167,10 +178,6 @@ footer {
 
 .jumbotron-fluid {
     margin: auto;
-}
-
-#bookingForm {
-    background-color: #DAD7CD;
 }
 
 .bg-color {
@@ -209,7 +216,7 @@ footer {
 }
 
 .font-carousel {
-    color: #fff;
+    color: black;
 }
 
 /* .link:hover,

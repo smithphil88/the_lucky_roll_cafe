@@ -25,17 +25,18 @@
     </section>
     <section class="row-fluid d-flex justify-content-center bg-color mt-0">
         <div class="card-group col-lg-8 card-style">
-            <div class="card text-center shadow">
+            <!-- Modal to take user to booking screen -->
+            <div class="card text-center">
                 <img src="{% static 'images/lucky_roll_images/games-1.jpg' %}" alt="A game of monopoly" class="card-img-top">
                 <div class="card-body d-flex flex-column justify-content-between">
                     <h2 class="display-6">Book Now</h2>
-                    <div class="emphasised">
+                    <div>
                         <p class="card-text">Like to plan your game night?<br>
                             There's always a table ready for your visit!
                         </p>
                     </div>
 
-                    <!-- Button redirecting to booking page -->
+                    <!-- Button to booking page -->
                     <a href="{% url 'book' %}" class="d-flex flex-column justify-content-center nav-link">
                         <button type="button" class="mb-0 btn">
                             Book Now
@@ -43,26 +44,28 @@
                     </a>
                 </div>
             </div>
-            <div class="card text-center shadow">
+            <!-- Modal for the different types of games -->
+            <div class="card text-center">
                 <img src="{% static 'images/lucky_roll_images/games-2.jpg' %}" alt="A bookshelf full of board games" class="card-img-top our-games-img">
                 <div class="card-body d-flex flex-column justify-content-between">
-                    <h2 class="display-6 font-brown">Our Games</h2>
-                    <div class="emphasised">
-                        <p class="card-text">Browse through a small percentage of our collection of outstanding games.
+                    <h2 class="display-6">Our Games</h2>
+                    <div>
+                        <p class="card-text">Browse through a small percentage of<br>
+                            our collection of outstanding games.
                         </p>
                     </div>
                     <button type="button" class="mb-0 btn" data-bs-toggle="modal" data-bs-target="#games">
                         See our games
                     </button>
-                    <div class="modal fade modal-no-margin" id="games" tabindex="-1" aria-labelledby="gamesModal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
-                            <div class="modal-content bg-trans-black col modal-no-margin">
+                    <div class="modal modal-no-margin" id="games" tabindex="-1" aria-labelledby="gamesModal" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-fullscreen modal-no-margin">
+                            <div class="modal-content col modal-no-margin">
                                 <div class="modal-header text-align-center">
-                                    <h3 class="display-6 text-white" id="gamesModal">Our Games</h3>
-                                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    <h3 class="display-6" id="gamesModal">Our Games</h3>
+                                    <button type="button" class="btn-close btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <div id="gameCarouselControls" class="carousel slide" data-bs-ride="carousel">
+                                    <div id="gameCarouselControls" class="carousel carousel-dark slide" data-bs-ride="carousel">
                                         <div class="carousel-inner carousel-pics">
                                             <div class="carousel-item active">
                                                 <img src="{% static 'images/lucky_roll_images/carousel-images/chess.jpg' %}" class="d-block img-responsive"  alt="chess board">
@@ -104,18 +107,19 @@
                                     </div>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-brown" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="card text-center shadow">
+            <!-- Modal for the coffee menu -->
+            <div class="card text-center">
                 <img src="{% static 'images/lucky_roll_images/coffee-1.jpg' %}" alt="A professional coffee machine pouring two coffees" class="card-img-top">
                 <div class="card-body d-flex flex-column justify-content-center">
-                    <h2 class="display-6 font-brown">Our Menu</h2>
-                    <div class="emphasised">
+                    <h2 class="display-6">Our Menu</h2>
+                    <div>
                         <p class="card-text">Cake? Coffee? Vegan?<br>
                             We've got you!<br>
                         </p>
@@ -123,18 +127,18 @@
                     <button type="button" class="mb-0 btn" data-bs-toggle="modal" data-bs-target="#menu">
                         See The Menu
                     </button>
-                    <div class="modal fade modal-no-margin" id="menu" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
-                            <div class="modal-content bg-trans-brown col modal-no-margin">
+                    <div class="modal modal-no-margin" id="menu" tabindex="-1" aria-labelledby="menuModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-fullscreen modal-no-margin">
+                            <div class="modal-content col modal-no-margin">
                                 <div class="modal-header">
-                                    <h3 class="display-6 font-brown" id="menuModalLabel">Our Menu</h1>
+                                    <h3 class="display-6" id="menuModalLabel">Our Menu</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
                                     <img src="{% static 'images/lucky_roll_images/coffee-menu.webp' %}" alt="Our Menu" class="img-fluid menu-pic">
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary btn-brown" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>
@@ -147,9 +151,10 @@
 {% else %}
 <section class="container">
     <div class="row">
-        <div>
+        <div class="card mt-1 border center">
             <h1>No access allowed</h1>
             <p>There seems to be a mistake, please login to access this page</p>
+            <a class="link mb-3" href="{% url 'home' %}">HOME</a>
         </div>
     </div>
 </section>

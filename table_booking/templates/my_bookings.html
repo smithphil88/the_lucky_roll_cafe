@@ -9,7 +9,7 @@
 
 {% block content %}
 <body>
-    <section>
+    <section class="content-wrap">
         <div class="row">
             <div class="jumbotron-fluid about-title mt-2">
                 <h3 class="mb-0">My Bookings</h3>
@@ -37,7 +37,7 @@
                             <button type="button" class="btn">Edit Booking</button></a>
                     </div>
                     <div class="col m-1">
-                        <button type="button" class="btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking">Delete Booking</button>
+                        <button type="button" class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking">Delete Booking</button>
                         <div class="modal modal-no-margin fade" id="deletebooking" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
                                 <div class="modal-content col modal-no-margin">
@@ -50,7 +50,7 @@
                                         <p class="font-white emphasised m-5">This will delete this booking?</p>
                                         <div class="row d-flex justify-content-center">
                                             <a href="{% url 'deletebooking' booking.slug %}">
-                                                <button type="button" class="btn">Yes, delete</button>
+                                                <button type="button" class="btn btn-danger">Yes, delete</button>
                                             </a>
                                             <div class="col-lg-3">
                                                 <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>

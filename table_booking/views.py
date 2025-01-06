@@ -37,9 +37,11 @@ class UserEditView(generic.UpdateView):
     form_class = EditProfileForm
     template_name = 'my_profile.html'
     success_url = reverse_lazy('home')
+    
 
     def get_object(self):
         return self.request.user
+        
 
 @login_required
 def delete_account(request):

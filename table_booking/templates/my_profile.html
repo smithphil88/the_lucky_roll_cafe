@@ -9,13 +9,20 @@
 
 {% block content %}
 <body>
-    <section>
+    <section class="content-wrap">
         <div class="container">
             <div class="row">
                 <div class="jumbotron-fluid about-title mt-2">
                     <h1 class="mb-0">{{user.username}}'s Profile</h1>
                 </div>
-                <div>
+                <div class="row card border mt-2">
+                    <div class="card-body">
+                        <p class="d-flex justify-content-center center mt-3">Check out your profile below.<br>
+                            Here you can change your username, names and password.<br>
+                            You can also delete your account.</p>
+                    </div>
+                </div>
+                <div class="col border m-4">
                     <div>
                         <form method="post">
                             {% csrf_token %}
@@ -27,7 +34,7 @@
                         <a class="link" href="{% url 'account_reset_password' %}">Reset Password</a>
                     </div>
                     <div>
-                        <button type="button" class="btn-danger px-3 mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#delete">Delete account</button>
+                        <button type="button" class=" btn btn-danger px-3 mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#delete">Delete account</button>
     
                         <div class="modal modal-no-margin fade" id="delete" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">

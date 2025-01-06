@@ -6,11 +6,11 @@
 {% block content %}
 {% if user.is_authenticated %}
 <body>
-    <section class="container mb-5">
+    <section class="container mb-1 content-wrap">
         <div class="jumbotron-fluid about-title mt-2">
             <h1>Book your table</h1>
         </div>
-        <div class="row card border m-4">
+        <div class="row card border m-3">
             <div class="card-body">
                     <p>Welcome {{ user.username }}, please selected from the following options</p>
                         <form method="POST" action="{% url 'book' %}">
@@ -20,11 +20,18 @@
                                 class="btn btn-signup btn-lg">Submit</button>
                         </form>
                 {% else %}
-                        <p>Oops! You need to be signed in, in order to book a table.</p>
-                {% endif %}
             </div>
         </div>
     </section>
+    <section class="container">
+    <div class="row">
+        <div class="card mt-1 border center">
+            <h1>No access allowed</h1>
+            <p>There seems to be a mistake, please login to access this page</p>
+            <a class="link mb-3" href="{% url 'home' %}">HOME</a>
+        </div>
+    </div>
+</section>
 </body>
-
+{% endif %}
 {% endblock %}
