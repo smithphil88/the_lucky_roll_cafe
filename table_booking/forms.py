@@ -14,11 +14,19 @@ from autoslug import AutoSlugField
 
 
 class BookingForm(forms.ModelForm):
-
-    booking_date = forms.DateField(widget=forms.SelectDateWidget, required=False)
-    time = forms.ChoiceField(choices=TIME_SLOTS, required=False)
-    additional_message = forms.CharField(max_length=200, widget=SummernoteWidget(), required=False)
-    table_type = forms.ChoiceField(choices=TABLE_TYPE, required=False)
+    booking_date = forms.DateField(widget=forms.SelectDateWidget(attrs={'class': 'form-select'}), required=False)
+    time = forms.ChoiceField(choices=TIME_SLOTS,widget=forms.Select(attrs={'class': 'form-select'}), required=False)
+    additional_message = forms.CharField(
+        label='Please let us know if you have any other requirements',
+        widget=forms.Textarea(attrs={
+            'class': 'form-control',
+            'rows': 4,
+            'placeholder': 'Enter additional requirements here...',
+            'style': 'resize: none;'
+        }),
+        required=False
+    )
+    table_type = forms.ChoiceField(choices=TABLE_TYPE, widget=forms.Select(attrs={'class': 'form-select'}), required=False)
     num_of_guests = forms.IntegerField(label="Guests (max-12 people)",
         widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number', 'min': 1, 'max': 12}),
         required=False

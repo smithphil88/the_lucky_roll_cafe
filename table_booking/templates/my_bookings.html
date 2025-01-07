@@ -17,9 +17,9 @@
             {% if user_bookings %}
                 
             <div class="row">
-                <p class="d-flex justify-content-center mt-3">Check out your bookings below. Here you can create a new booking, edit current bookings or delete bookings</p>
+                <p class="d-flex justify-content-center center mt-3">Check out your bookings below. Here you can create a new booking, edit current bookings or delete bookings</p>
                 <div class="col m-1 center">
-                    <a href="{% url 'book' %}" class="link" aria-label="create new booking">
+                    <a href="{% url 'book' %}" class="btn" aria-label="create new booking">
                         Create new booking</a>
                 </div>
             </div>
@@ -38,7 +38,7 @@
                 
                 <div class="row d-flex justify-content-center">
                     <div class="col-2 center m-1">
-                        <a href="{% url 'edit_my_bookings' booking.slug %}" class=" btn link">
+                        <a href="{% url 'edit_my_bookings' booking.slug %}" class=" btn">
                             Edit Booking</a>
                     </div>
                     <div class=" col-2 center m-1">
@@ -47,31 +47,27 @@
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
                                 <div class="modal-content col modal-no-margin">
                                     <div class="modal-header d-flex justify-content-center">
-                                        <h2 class="display-4 m-5" id="DelModalLabel">Confirm your choice</h2>
+                                        <h2 class="display-4 m-5">Confirm your choice</h2>
                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body text-center">
-                                        <h2 class="display-4 m-5" id="DelModalLabel">Are you sure?</h2>
+                                        <h2 class="display-4 m-5">Are you sure?</h2>
                                         <p class="font-white emphasised m-5">This will delete this booking?</p>
-                                        <div class="row d-flex justify-content-center">
-                                            <a href="{% url 'deletebooking' booking.slug %}">
-                                                Yes, delete
-                                            </a>
-                                            <div class="col-lg-3">
-                                                <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
-                                            </div>
-                                        </div>
+                                        <a class="btn" href="{% url 'deletebooking' booking.slug %}">Yes, delete</a>
+                                        <a class="btn" href="{% url 'my_bookings' %}">No, cancel</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <hr class="mt-1">
+                    <div>
+                        <hr class="mt-1">
+                    </div>
                     {% endfor %}
                     {% else %}
                     <div class="center mt-5">
                         <p>There are no bookings yet, click below to make one.</p>
-                        <a href="{% url 'book' %}" class="link" aria-label="create new booking">
+                        <a href="{% url 'book' %}" class="btn" aria-label="create new booking">
                             Create New Booking</a>
                     </div>
                         

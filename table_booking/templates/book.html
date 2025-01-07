@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 
-{% load crispy_forms_filters %}
-{% load crispy_forms_tags %}
-
 {% block content %}
 {% if user.is_authenticated %}
 
@@ -17,22 +14,22 @@
                             {% csrf_token %}
                             {{ form.as_p }}
                             <button id="submitButton" type="submit"
-                                class="btn btn-signup btn-lg">Submit</button>
-                                <a href="{% url 'home' %}" class="btn btn-secondary">Cancel</a>
+                                class="btn btn-signup">Submit</button>
+                                <a href="{% url 'home' %}" class="btn">Cancel</a>
                         </form>
                 {% else %}
             </div>
         </div>
     </section>
     <section class="container">
-    <div class="row">
-        <div class="card mt-1 border center">
-            <h1>No access allowed</h1>
-            <p>There seems to be a mistake, please login to access this page</p>
-            <a class="link mb-3" href="{% url 'home' %}">HOME</a>
+        <div class="row">
+            <div class="card mt-1 border center">
+                <h1>No access allowed</h1>
+                <p>There seems to be a mistake, please login to access this page</p>
+                <a class="link mb-3" href="{% url 'home' %}">HOME</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
 {% endif %}
 {% endblock %}

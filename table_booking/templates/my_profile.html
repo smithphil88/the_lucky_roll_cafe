@@ -15,7 +15,7 @@
                 <div class="jumbotron-fluid about-title mt-2">
                     <h1 class="mb-0">{{user.username}}'s Profile</h1>
                 </div>
-                <div class="row card border mt-2">
+                <div class="card border mt-2">
                     <div class="card-body">
                         <p class="d-flex justify-content-center center mt-3">Check out your profile below.<br>
                             Here you can change your username, names and password.<br>
@@ -47,14 +47,10 @@
                                         <p class="font-white emphasised m-5">If you delete your account you will loose access to 
                                         both your profile and your bookings!
                                         </p>
-                                        <div class="row d-flex justify-content-center">
-                                            <a href="{% url 'deleteaccount' %}" class="col-lg-3">
-                                                <button type="button" class="btn btn-danger px-3 m-5">Yes, delete!</button>
+                                            <a class="btn" href="{% url 'deleteaccount' %}" class="col-lg-3">
+                                                Yes, delete
                                             </a>
-                                            <div class="col-lg-3">
-                                                <button type="button" class="btn m-5" data-bs-dismiss="modal">No, cancel!</button>
-                                            </div>                                                
-                                        </div>
+                                            <a class="btn" href="{% url 'my_profile' %}">No, cancel</a>
                                     </div>
                                 </div>
                             </div>
