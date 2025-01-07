@@ -38,10 +38,13 @@ class UserEditView(generic.UpdateView):
     template_name = 'my_profile.html'
     success_url = reverse_lazy('home')
     
-
-    def get_object(self):
+    def get_object(self, queryset=None):
         return self.request.user
-        
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Your profile has been updated!')
+        return super().form_valid(form)
+    
 
 @login_required
 def delete_account(request):
@@ -102,12 +105,12 @@ class EditBookingsView(UpdateView, LoginRequiredMixin):
     template_name = 'edit_booking.html'
     success_url = reverse_lazy('my_bookings')
     
-    def edit_booking(self, form):
-            form.instance.user = user.objects.get(
-                user=self.request.user
-            )
-            messages.success(self.request, 'Thank you! Your booking has been updated!')
-            return super().edit_booking(form)
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        response = super().form_valid(form)
+        messages.success(self.request, 'Thank you! Your booking has been updated!')
+
+        return response
 
 def delete_booking(request, slug):
 
