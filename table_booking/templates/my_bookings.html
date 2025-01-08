@@ -37,11 +37,11 @@
                 <p class="m-3">Added Information: {{booking.additional_message}}</p>
                 
                 <div class="row d-flex justify-content-center">
-                    <div class="col-2 center m-1">
+                    <div class="center m-1">
                         <a href="{% url 'edit_my_bookings' booking.slug %}" class=" btn">
                             Edit Booking</a>
                     </div>
-                    <div class=" col-2 center m-1">
+                    <div class="center m-1">
                         <button type="button" class=" btn btn-danger" data-bs-toggle="modal" data-bs-target="#deletebooking-{{booking.id}}">Delete Booking</button>
                         <div class="modal modal-no-margin fade" id="deletebooking-{{booking.id}}" tabindex="-1" aria-labelledby="DeleteModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-fullscreen modal-no-margin">
