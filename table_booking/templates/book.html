@@ -3,24 +3,22 @@
 {% block content %}
 {% if user.is_authenticated %}
 
-    <section class="container mb-1 content-wrap">
+    <section class="container">
         <div class="jumbotron-fluid about-title mt-2">
             <h1>Book your table</h1>
         </div>
-        <div class="row card border m-3">
-            <div class="card-body">
-                    <p>Welcome {{ user.username }}, please selected from the following options</p>
-                        <form method="POST" action="{% url 'book' %}">
-                            {% csrf_token %}
-                            {{ form.as_p }}
-                            <button id="submitButton" type="submit"
-                                class="btn btn-signup">Submit</button>
-                                <a href="{% url 'home' %}" class="btn">Cancel</a>
-                        </form>
-                {% else %}
-            </div>
+        <div class="row">
+            <p class="d-flex justify-content-center center mt-3">Welcome {{ user.username }}, please selected from the following options</p>
         </div>
     </section>
+    <form method="POST" action="{% url 'book' %}" class="border form m-3">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="submitButton" type="submit"
+            class="btn btn-signup">Submit</button>
+            <a href="{% url 'home' %}" class="btn">Cancel</a>
+    </form>
+    {% else %}
     <section class="container">
         <div class="row">
             <div class="card mt-1 border center">

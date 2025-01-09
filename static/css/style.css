@@ -41,10 +41,6 @@ footer {
     color: #3A5A40;
 }
 
-.content-wrap {
-    padding-bottom: 5.5rem;
-}
-
 .bold {
     font-weight: bold;
 }
@@ -253,6 +249,15 @@ textarea {
     border-radius: 4px; 
     resize: vertical;
 }
+
+.form {
+    background-color: #fff;
+    padding: 20px;
+}
+
+/* .form-width {
+    width: 60%;
+} */
 
 /* @media screen and (max-width: 768px) {
     .navbar-brand {
