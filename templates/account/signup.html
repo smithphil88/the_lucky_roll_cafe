@@ -18,10 +18,10 @@
             <div class="d-flex justify-content-center mt-3">
                 <p>If you have an account with us already, you can sign in <a href="{{ login_url }}" class="link"><strong>here</strong></a></p>
             </div>
-            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            <form class="signup" method="post" action="{% url 'account_signup' %}">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit btn" class="btn mb-2">Register</button>
+                    <button type="submit" class="btn mb-2">Register</button>
             </form>
         </div>
     </div>

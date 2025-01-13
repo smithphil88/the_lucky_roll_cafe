@@ -5,7 +5,7 @@ from django.views import generic, View
 from django.views.generic.edit import UpdateView
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Booking, UserProfile
-from .forms import BookingForm, SignUpForm, EditProfileForm
+from .forms import BookingForm, EditProfileForm
 from django.contrib import messages
 from django.contrib.auth.models import User
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -28,10 +28,10 @@ def about(request, template_name="about.html"):
         request, template_name,
     )
 
-class UserRegisterView(generic.CreateView):
-    form_class = SignUpForm
-    template_name = 'account/signup.html'
-    success_url = reverse_lazy('account_login')
+# class UserRegisterView(generic.CreateView):
+#     form_class = SignUpForm
+#     template_name = 'account/signup.html'
+#     success_url = reverse_lazy('account_login')
 
 class UserEditView(generic.UpdateView):
     form_class = EditProfileForm

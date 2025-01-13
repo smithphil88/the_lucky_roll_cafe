@@ -4,7 +4,7 @@ from .models import UserProfile, Booking, TABLE_TYPE, TIME_SLOTS
 from django import forms
 from django.core.exceptions import ValidationError
 from datetime import date
-from django.contrib.auth.forms import UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import UserChangeForm
 from django.contrib.auth.models import User
 from django.forms import ModelForm
 from crispy_forms.helper import FormHelper
@@ -46,19 +46,19 @@ class BookingForm(forms.ModelForm):
         fields = ('table_type','booking_date','time', 'num_of_guests', 'additional_message')
         read_only = ['slug']
 
-class SignUpForm(UserCreationForm):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
+# class SignUpForm(UserCreationForm):
+#     email = forms.EmailField(widget=forms.EmailInput(attrs={'class': 'form-control'}))
     
-    class Meta:
-        model = User
-        fields =('username', 'email', 'password1', 'password2')
+#     class Meta:
+#         model = User
+#         fields =('username', 'email', 'password1', 'password2')
 
-    def __init__(self, *args, **kwargs):
-        super(SignUpForm, self).__init__(*args, **kwargs)
+#     def __init__(self, *args, **kwargs):
+#         super(SignUpForm, self).__init__(*args, **kwargs)
 
-        self.fields['username'].widget.attrs['class'] = 'form-control'
-        self.fields['password1'].widget.attrs['class'] = 'form-control'
-        self.fields['password2'].widget.attrs['class'] = 'form-control'
+#         self.fields['username'].widget.attrs['class'] = 'form-control'
+#         self.fields['password1'].widget.attrs['class'] = 'form-control'
+#         self.fields['password2'].widget.attrs['class'] = 'form-control'
 
 
 class EditProfileForm(UserChangeForm):
