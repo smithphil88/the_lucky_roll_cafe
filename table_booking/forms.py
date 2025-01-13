@@ -14,7 +14,7 @@ from autoslug import AutoSlugField
 
 
 class BookingForm(forms.ModelForm):
-    booking_date = forms.DateField(widget=forms.SelectDateWidget(attrs={'class': 'form-select'}), required=False)
+    booking_date = forms.DateField(widget=forms.SelectDateWidget(attrs={'class': 'form-select'}), required=True)
     time = forms.ChoiceField(choices=TIME_SLOTS,widget=forms.Select(attrs={'class': 'form-select'}), required=False)
     additional_message = forms.CharField(
         label='Please let us know if you have any other requirements',
@@ -28,8 +28,8 @@ class BookingForm(forms.ModelForm):
     )
     table_type = forms.ChoiceField(choices=TABLE_TYPE, widget=forms.Select(attrs={'class': 'form-select'}), required=False)
     num_of_guests = forms.IntegerField(label="Guests (max-12 people)",
-        widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number', 'min': 1, 'max': 12}),
-        required=False
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'type': 'number', 'min': 1, 'max': 12, 'placeholder':'This field is required'}),
+        required=True,
     )
     slug = AutoSlugField(max_length=70, unique=True)
 
@@ -72,4 +72,4 @@ class EditProfileForm(UserChangeForm):
         model = User
         fields =('username', 'email', 'first_name', 'last_name')
 
-# (widget=forms.DateInput(attrs={'class':'form-control', 'type':'date', 'value': datetime.date.today}), required=False)
+

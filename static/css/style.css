@@ -255,6 +255,10 @@ textarea {
     padding: 20px;
 }
 
+.errorlist {
+    display: none;
+}
+
 /* .form-width {
     width: 60%;
 } */
