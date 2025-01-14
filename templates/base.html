@@ -26,7 +26,7 @@
     <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
                 <div class="container-fluid">
-                    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+                    <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}" aria-label="takes you to the home page">
                         <img src="{% static 'images/lucky_roll_images/the-lucky-roll-cafe-logo.png' %}" alt="Logo" width="90" height="90" class="d-inline-block align-text-top nav-logo">
                         <span class="ms-2 d-none d-lg-inline nav-title">The Lucky Roll Cafe</span>
                     </a>
@@ -52,14 +52,14 @@
                                 <a class="nav-link" aria-label="my bookings" aria-current="page" href="{% url 'my_bookings' %}">My Bookings</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                                <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}" aria-label="logs out">Logout</a>
                             </li>
                             {% else %}
                             <li class="nav-item p-2">
-                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}">Register</a>
+                                <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page" href="{% url 'account_signup' %}" aria-label="takes you to the sign up page">Register</a>
                             </li>
                             <li class="nav-item p-2">
-                                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                                <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}" aria-label="takes you to the login page">Login</a>
                             </li>
                             {% endif %}
                             

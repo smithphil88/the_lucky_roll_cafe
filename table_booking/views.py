@@ -70,7 +70,8 @@ def booking_form(request):
             booking.user = request.user
             booking.save()
             messages.success(
-                request, 'Thanks, you can see your booking on the "My Bookings" page.')
+                request,
+                'Thanks, you can see your booking on the "My Bookings" page.')
             return redirect('my_bookings')
         else:
             messages.error(request, form.errors)
@@ -107,7 +108,8 @@ class EditBookingsView(UpdateView, LoginRequiredMixin):
     def form_valid(self, form):
         form.instance.user = self.request.user
         response = super().form_valid(form)
-        messages.success(self.request, 'Thank you! Your booking has been updated!')
+        messages.success(
+            self.request, 'Thank you! Your booking has been updated!')
 
         return response
 

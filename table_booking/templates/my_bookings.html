@@ -38,7 +38,7 @@
                 
                 <div class="row d-flex justify-content-center">
                     <div class="center m-1">
-                        <a href="{% url 'edit_my_bookings' booking.slug %}" class=" btn">
+                        <a href="{% url 'edit_my_bookings' booking.slug %}" aria-label="takes you to the booking page" class=" btn">
                             Edit Booking</a>
                     </div>
                     <div class="center m-1">
@@ -53,8 +53,8 @@
                                     <div class="modal-body text-center">
                                         <h2 class="display-4 m-5">Are you sure?</h2>
                                         <p class="font-white emphasised m-5">This will delete this booking?</p>
-                                        <a class="btn btn-danger" href="{% url 'deletebooking' booking.slug %}">Yes, delete</a>
-                                        <a class="btn" href="{% url 'my_bookings' %}">No, cancel</a>
+                                        <a class="btn btn-danger" href="{% url 'deletebooking' booking.slug %}" aria-label="deletes the current booking">Yes, delete</a>
+                                        <a class="btn" href="{% url 'my_bookings' %}" aria-label="takes you to the my bookings page">No, cancel</a>
                                     </div>
                                 </div>
                             </div>

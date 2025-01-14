@@ -31,7 +31,7 @@
                         </form>
                     </div>
                     <div class="mt-2">
-                        <a class="btn" href="{% url 'account_reset_password' %}">Reset Password</a>
+                        <a class="btn" href="{% url 'account_reset_password' %}" aria-label="takes you to the password reset page">Reset Password</a>
                     </div>
                     <div>
                         <button type="button" class=" btn btn-danger px-3 mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#delete">Delete account</button>
@@ -47,8 +47,8 @@
                                         <p class="font-white emphasised m-5">If you delete your account you will loose access to 
                                         both your profile and your bookings!
                                         </p>
-                                        <a class="btn btn-danger" href="{% url 'deleteaccount' %}">Yes, delete</a>
-                                        <a class="btn" href="{% url 'my_profile' %}">No, cancel</a>
+                                        <a class="btn btn-danger" href="{% url 'deleteaccount' %}" aria-label="deletes the account completely">Yes, delete</a>
+                                        <a class="btn" href="{% url 'my_profile' %}" aria-label="takes you to the profile page">No, cancel</a>
                                     </div>
                                 </div>
                             </div>

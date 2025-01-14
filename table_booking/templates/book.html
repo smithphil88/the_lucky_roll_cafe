@@ -16,7 +16,7 @@
         {{ form.as_p }}
         <button id="submitButton" type="submit"
             class="btn btn-signup">Submit</button>
-            <a href="{% url 'home' %}" class="btn">Cancel</a>
+            <a href="{% url 'home' %}" aria-label="takes you to the home page" class="btn">Cancel</a>
     </form>
     {% else %}
     <section class="container">
@@ -24,7 +24,7 @@
             <div class="card mt-1 border center">
                 <h1>No access allowed</h1>
                 <p>There seems to be a mistake, please login to access this page</p>
-                <a class="link mb-3" href="{% url 'home' %}">HOME</a>
+                <a class="link mb-3" href="{% url 'home' %}" aria-label="takes you to the home page">HOME</a>
             </div>
         </div>
     </section>

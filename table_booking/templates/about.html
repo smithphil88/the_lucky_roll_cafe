@@ -37,7 +37,7 @@
                     </div>
 
                     <!-- Button to booking page -->
-                    <a href="{% url 'book' %}" class="d-flex mb-0 mt-2 flex-column btn book-link justify-content-center">
+                    <a href="{% url 'book' %}" aria-label="takes you to the booking page" class="d-flex mb-0 mt-2 flex-column btn book-link justify-content-center">
                             Book Now
                     </a>
                 </div>
@@ -152,7 +152,7 @@
         <div class="card mt-1 border center">
             <h1>No access allowed</h1>
             <p>There seems to be a mistake, please login to access this page</p>
-            <a class="link mb-3" href="{% url 'home' %}">HOME</a>
+            <a class="link mb-3" href="{% url 'home' %}" aria-label="takes you to the home page">HOME</a>
         </div>
     </div>
 </section>
