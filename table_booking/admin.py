@@ -5,12 +5,11 @@ from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
-    list_display = ('user', 'table_type', 'booking_date', 'time', 'num_of_guests', 'additional_message','slug')
+    list_display = (
+        'user', 'table_type', 'booking_date', 'time',
+        'num_of_guests', 'additional_message','slug')
     search_fields = ['user']
-    list_filter = ('user', 'table_type', 'booking_date', 'time', 'num_of_guests')
+    list_filter = (
+        'user', 'table_type', 'booking_date', 'time',
+        'num_of_guests')
     summernote_fields = ('additional_message',)
-
-@admin.register(UserProfile)
-class UserProfileAdmin(SummernoteModelAdmin):
-    list_display = ('user', 'first_name', 'last_name', 'email', 'favourite_game')
-

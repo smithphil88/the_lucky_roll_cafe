@@ -7,6 +7,7 @@ Image of site on different devices
 - [Introduction](#introduction)
 - [Design](#design)
 - [Features](#features)
+- [User Stories](#user-stories)
 - [Languages](#languages)
 - [Database](#database)
 - [Agile Design Principles](#agile-design-principles)
@@ -20,11 +21,15 @@ The focus of this site was to implement the django framework and python on the b
 
 ## Design
 
-The idea behind the design for the site was simplicity and functionality presented in an appealing and intuitive manner. Users who would be brought to the site are likely to know what they want and the design encourages them to use the site. Navigation throughout the site is intuitive with functions such as being able to access the nav-bar at all times and having messages appear to let them know a certain request has been successful or unsuccessful.
+The idea behind the design for the site was simplicity and functionality presented in an appealing and intuitive manner. Users who would be brought to the site are likely to know what they want and the design encourages them to use the site. Navigation throughout the site is intuitive with functions such as being able to access the nav-bar at all times and having messages appear to let them know a certain request has been successful or unsuccessful. I thought about the customer base for this type of business and wanted a historic and old feel to the site.
 
 ### Color Scheme
 
-I choose a color scheme that fit with the theme of coffee and board games.
+I choose a color scheme that fit with the theme of coffee and board games. I found I color scheme that fitted my theme from [coolors.com](https://coolors.co/dad7cd-a3b18a-588157-3a5a40-344e41)
+
+### Font
+
+My font was chosen from [googlefonts](https://fonts.google.com/specimen/Modern+Antiqua) - I chose Modern Antiqua as it fell under the medieval filter on google fonts and this links suitably with the historic feel I initially desired.
 
 ## Features
 
@@ -81,6 +86,10 @@ A page on the site where a user can post their own experience of a board game. T
 #### Comprehensive message to business owners function
 
 This would be an area of the site where a user can make board game recoomendations, ideas for events/theme nights etc directly to the owner. 
+
+## User Stories
+
+All of user stories can be located in the liked GitHub project [here](https://github.com/users/smithphil88/projects/3).
 
 ## Languages
 
