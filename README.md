@@ -31,6 +31,15 @@ I choose a color scheme that fit with the theme of coffee and board games. I fou
 
 My font was chosen from [googlefonts](https://fonts.google.com/specimen/Modern+Antiqua) - I chose Modern Antiqua as it fell under the medieval filter on google fonts and this links suitably with the historic feel I initially desired.
 
+### Wireframes
+
+I used the [Balsamiq](https://balsamiq.com/) wireframing tool to design simple mock-ups of my site to give me an initial idea of how the site layout should be.
+
+![screenshot](documentation/wireframes/wireframe-home.png)
+![screenshot](documentation/wireframes/wireframe-register.png)
+![screenshot](documentation/wireframes/wireframe-signout.png)
+![screenshot](documentation/wireframes/wireframe-booking.png)
+
 ## Features
 
 ### Site Pages
@@ -156,3 +165,10 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 ## Deployment
 
 ## Credits
+
+### Content
+
+| Source | Comments |
+| --- | --- | --- |
+| [Flexbox Froggy](https://flexboxfroggy.com/) | modern responsive layouts |
+| [W3 Schools](https://www.w3schools.com/django/index.php) | django basics |

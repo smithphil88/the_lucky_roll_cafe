@@ -62,8 +62,21 @@ I have tested my site on different browser to check for any compatability issues
 
 I have tested my site on different devices and screen sizes to check for any responsiveness problems.
 
-| Device | Screenshot | Notes |
-| --- | --- | --- |
+| Device | Screen |Screenshot | Notes |
+| --- | --- | --- | --- |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Home page | ![screenshot](documentation/responsiveness/responsive-home.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-1.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-2.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Booking form | ![screenshot](documentation/responsiveness/responsive-booking.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Profile | ![screenshot](documentation/responsiveness/responsive-profile.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| My Bookings | ![screenshot](documentation/responsiveness/responsive-mybookings.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| My Bookings | ![screenshot](documentation/responsiveness/responsive-mybookings1.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Logout | ![screenshot](documentation/responsiveness/responsive-logout.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Login | ![screenshot](documentation/responsiveness/responsive-login.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Password reset | ![screenshot](documentation/responsiveness/responsive-password-reset.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Register | ![screenshot](documentation/responsiveness/responsive-register.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete booking | ![screenshot](documentation/responsiveness/responsive-delete-bookings.png) | Works as expected |
+| GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete account | ![screenshot](documentation/responsiveness/responsive-delete-account.png) | Works as expected |
 
 
 ## Lighthouse
@@ -77,13 +90,52 @@ I have thoroughly tested each aspect of the website as shown below.
 
 | Page | User Action | Expected Result | Pass/Fail | Comments |
 | --- | --- | --- | --- | --- |
-| Nav links | | | | |
+| Navbar | | | | |
 | | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Logo | Redirection to Home page | Pass | |
-| | Click on Logo | Redirection to Home page | Pass | |
+| | Click on Home link | Redirection to Home page | Pass | |
+| | Click on About link | Redirection to About page | Pass | |
+| | Click on Book link | Redirection to booking form page | Pass | |
+| | Click on Profile link | Redirection to the profile page | Pass | |
+| | Click on My Bookings link | Redirection to the my bookings page | Pass | |
+| | Click on Logout link | Takes the user to a confirmation screen in order to logout | Pass | |
+| Footer | | | | |
+| | Click on Facebook link | Redirection to Facebook | Pass | |
+| | Click on Instagram link | Redirection to Instagram | Pass | |
+| | Click on TikTok link | Redirection to TikTok | Pass | |
+| About | | | | |
+| | Click on book now link | Redirection to the booking form | Pass | |
+| | Click on see our games | A modal opens and photos of board games show | Pass | |
+| | Click on see the menu | A modal open and the menu can be viewed | Pass | |
+| | Click on next direction buttons on the see our games modal | The next game in the list can be viewed | Pass | |
+| | Click on previous direction buttons on the see our games modal | The previous game in the list can be viewed | Pass | |
+| | Click on close button in see our games modal | Closes the modal | Pass | |
+| | Click on close button in see the menu modal | Closes the modal | Pass | |
+| Booking form | | | | |
+| | Select from table type option | Selects table type | Pass | |
+| | Choose a valid date for booking | Upon submittal fields have to be in the future, a message appears at the top of the screen informing this to the user | Pass | |
+| | Select a time choice | Select a time choice | Pass | |
+| | A number of guests can be chosen | User must select a number up to 12 | Pass | |
+| | An option for additional information is given | User does not have to input anything here for a valid booking | Pass | |
+| | Click on submit | If valid booking is stored in database and displayed on my bookings page, redirected to my bookings page | Pass | |
+| | Click on cancel button | User directed to home page | Pass | |
+| Profile | | | | |
+| | Input valid text into fields on profile form and click update | Profile page saves new information and stores it | Pass | |
+| | Valid email must be entered | An alert will appear if an invalid email address is entered upon clicking update | Pass | |
+| | Click reset password | Redirection to the password reset page | Pass | |
+| | Click delete account | A delete account modal appears | Pass | |
+| | Click yes to confirm delete account | Account that is logged in at that time deletes along with any booking | Pass | |
+| | Click no to cancel delete account | Redirect to profile page | Pass | |
+| Reset Password | | | | |
+| | Click on back to home page | Redirect to home page | Pass | |
+| My Bookings | | | | |
+| | Click on create new booking | Redirect to booking form | Pass | |
+| | Click on edit booking | A booking form appears with pre-filled information from a previous booking, click edit to make any changes | Pass | |
+| | Click on cancel within the edit booking function | Redirection to my bookings page | Pass | |
+| | Click on delete booking | A modal appears to confirm or cancel action | Pass | |
+| | Confirm delete booking | Deletes particular booking | Pass | |
+| | Cancels delete booking | Redirection to my bookings page | Pass | |
+| Logout | | | | |
+| | Click on log out button | Acoount is logged out | Pass | |
 
 
 ## User Stories
