@@ -44,7 +44,7 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 
 ## Browser Compatability
 
-I have tested my site on different browser to check for any compatability issues.
+I have tested my site on different browsers to check for any compatability issues.
 
 | Browser | Screenshot | Notes |
 | --- | --- | --- |
@@ -59,19 +59,19 @@ I have tested my site on different devices and screen sizes to check for any res
 
 | Device | Screen |Screenshot | Notes |
 | --- | --- | --- | --- |
-| Mobile(Devtools)| Home page | ![screenshot](documentation/responsiveness/mobile-devtool.png) | Works as expected |
+| Mobile (Devtools)| Home page | ![screenshot](documentation/responsiveness/mobile-devtool.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Home page | ![screenshot](documentation/responsiveness/responsive-home.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-1.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-2.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Booking form | ![screenshot](documentation/responsiveness/responsive-booking.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Profile | ![screenshot](documentation/responsiveness/responsive-profile.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| My Bookings | ![screenshot](documentation/responsiveness/responsive-mybookings.png) | Works as expected |
-| GalaxyA50, Pixel 7a, iPhone 14 Pro| My Bookings | ![screenshot](documentation/responsiveness/responsive-mybookings1.png) | Works as expected |
-| GalaxyA50, Pixel 7a, iPhone 14 Pro| Logout | ![screenshot](documentation/responsiveness/responsive-logout.png) | Works as expected |
+| Pixel 7a, iPhone 14 Pro| My Bookings | ![screenshot](documentation/responsiveness/responsive-mybookings1.png) | Works as expected |
+| Pixel 7a, iPhone 14 Pro| Logout | ![screenshot](documentation/responsiveness/responsive-logout.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Login | ![screenshot](documentation/responsiveness/responsive-login.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Password reset | ![screenshot](documentation/responsiveness/responsive-password-reset.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Register | ![screenshot](documentation/responsiveness/responsive-register.png) | Works as expected |
-| GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete booking | ![screenshot](documentation/responsiveness/responsive-delete-bookings.png) | Works as expected |
+| Pixel 7a, iPhone 14 Pro| Delete booking | ![screenshot](documentation/responsiveness/responsive-delete-bookings.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete account | ![screenshot](documentation/responsiveness/responsive-delete-account.png) | Works as expected |
 | Tablet(Devtools) | Home page | ![screenshot](documentation/responsiveness/tablet-devtools.png) | Works as expected |
 | Ipad, Fire HD10| Home page | ![screenshot](documentation/responsiveness/tablet-home.png) | Works as expected |
@@ -135,11 +135,11 @@ I have thoroughly tested each aspect of the website as shown below.
 | | Click on close button in see the menu modal | Closes the modal | Pass | |
 | Booking form | | | | |
 | | Select from table type option | Selects table type | Pass | |
-| | Choose a valid date for booking | Upon submittal fields have to be in the future, a message appears at the top of the screen informing this to the user | Pass | |
+| | Choose a valid date for booking | Upon submission fields have to be in the future, a message appears at the top of the screen informing this to the user | Pass | |
 | | Select a time choice | Select a time choice | Pass | |
 | | A number of guests can be chosen | User must select a number up to 12 | Pass | |
 | | An option for additional information is given | User does not have to input anything here for a valid booking | Pass | |
-| | Click on submit | If valid booking is stored in database and displayed on my bookings page, redirected to my bookings page | Pass | |
+| | Click on submit | If valid, booking is stored in database and displayed on my bookings page, redirected to my bookings page | Pass | |
 | | Click on cancel button | User directed to home page | Pass | |
 | Profile | | | | |
 | | Input valid text into fields on profile form and click update | Profile page saves new information and stores it | Pass | |

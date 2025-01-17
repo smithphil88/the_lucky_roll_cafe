@@ -21,7 +21,7 @@ The focus of this site was to implement the django framework and python on the b
 
 ## Design
 
-The idea behind the design for the site was simplicity and functionality presented in an appealing and intuitive manner. Users who would be brought to the site are likely to know what they want and the design encourages them to use the site. Navigation throughout the site is intuitive with functions such as being able to access the nav-bar at all times and having messages appear to let them know a certain request has been successful or unsuccessful. I thought about the customer base for this type of business and wanted a historic and old feel to the site.
+The idea behind the design for the site was simplicity and functionality presented in an appealing and intuitive manner. Users who would be brought to the site are likely to know what they want and the design encourages them to use the site. Navigation throughout the site is intuitive with functions such as being able to access the nav-bar at all times and having messages appear to let them know a certain request has been successful or unsuccessful. I thought about the customer base for this type of business and wanted an historic and old feel to the site.
 
 ### Color Scheme
 
@@ -48,19 +48,19 @@ The following examples are screenshots of the various pages on my site.
 
 ### Home page
 
-This is where the user will first land on the site, it leads them to either registering if it their first time visiting the site. A user must register in order to view any details. Or if they already have an account, they can proceed to the login page.
+This is where the user will first land on the site and leads them towards registering if it their first time visiting the site. A user must register in order to view any booking details. If they already have an account, they can proceed to the login page.
 
 ![screenshot](documentation/features/homepage-signedin.png)
 
 ### About page
 
-This page includes information about what the cafe provides. It enables users to go directly to the booking form if the so wish, it includes a small selection of what games are on offer in the cafe and a drinks menu too.
+This page includes information about what the cafe provides. It enables users to go directly to the booking form if they so wish and includes a small selection of the games on offer in the cafe and a drinks menu too.
 
 ![screenshot](documentation/features/about.png)
 
 ### Booking page
 
-On this page, a logged in user is able to choose details for their booking at the cafe. The user has to include details of the type of table they so require, a date of booking, which has been designed so they cannot book in the past, a choice of time slots are avaliable, number of guests (with the maximum being 12) and a place where the user can disclosure any further requirements. Certain sections have been coded so that they must be filled in, in order to create a valid booking form.
+On this page, a logged in user is able to choose details for their booking at the cafe. The user has to include details of the type of table they so require, a date of booking (which has been designed so they cannot book in the past), a choice of time slots are avaliable, number of guests (with the maximum being 12) and a place where the user can specify any further requirements. Certain sections have been coded so that they are mandatory, in order to create a valid booking form.
 
 ![screenshot](documentation/features/booking.png)
 
@@ -122,9 +122,9 @@ A page on the site where a user can post their own experience of a board game. T
 
 #### Comprehensive message to business owners function
 
-This would be an area of the site where a user can make board game recoomendations, ideas for events/theme nights etc directly to the owner. 
+This would be an area of the site where a user can make board game recommendations, ideas for events/theme nights etc directly to the owner. 
 
-Both of these feature will not be included in this deployed version due to time restraints but could be in any future deployments.
+Neither of these features will be included in this deployed version due to time restraints but could be in any future deployments.
 
 ## User Stories
 
@@ -132,7 +132,7 @@ All of user stories can be located in the liked GitHub project [here](https://gi
 
 ## Languages
 
-Technologies used;
+Technologies used:
 
 - [HTML](https://en.wikipedia.org/wiki/HTML) used for the main site content.
 - [CSS](https://en.wikipedia.org/wiki/CSS) used for the main site design and layout.
@@ -161,11 +161,11 @@ I designed my database using [Lucidchart](https://www.lucidchart.com/pages). I c
 
 User issues were created and issues and tasks were planned and referred back to over the course of the project using this Kanban Board.
 
-The [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) method was used to assist with the organisation of the project, it helped prioritise certain tasks and leave tasks until the end that were not needed for the scope of this assessement.
+The [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) method was used to assist with the organisation of the project. It helped prioritise certain tasks and leave tasks until the end that were not needed for the scope of this assessement.
 
 ![screenshot](documentation/github-project.png)
 
-Github Issues
+### Github Issues
 
 [Github Issues](https://github.com/smithphil88/the_lucky_roll_cafe/issues) was used alongside Github Projects. This was how I created my user stories, using a custom template that served my purposes.
 
@@ -191,9 +191,9 @@ This project uses [Heroku](https://www.heroku.com), a platform as a service (Paa
 
 Deployment steps are as follows, after account setup:
 
-- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the dropdown menu.
-- Your app name must be unique, and then choose a region closest to you (EU or USA), and finally, select **Create App**.
-- From the new app **Settings**, click **Reveal Config Vars**, and set your environment variables.
+- Select **New** in the top-right corner of your Heroku Dashboard, and select **Create new app** from the drop-down menu.
+- Your app name must be unique, and then choose a region closest to you (EU or USA) and finally, select **Create App**.
+- From the new app **Settings**, click **Reveal Config Vars** and set your environment variables.
 
 | Key | Value |
 | --- | --- |
@@ -208,7 +208,7 @@ Heroku needs two additional files in order to deploy properly.
 You can install this project's **requirements** (where applicable) using:
 - `pip3 install -r requirements.txt`
 
-If you have your own packages that have been installed, then the requirements file needs updated using:
+If you have your own packages that have been installed, then the requirements file needs to be updated using:
 - `pip3 freeze --local > requirements.txt`
 
 The **Procfile** can be created with the following command:
@@ -283,7 +283,7 @@ By forking the GitHub Repository, we make a copy of the original repository on o
 You can fork this repository by using the following steps:
 
 1. Log in to GitHub and locate the [GitHub Repository](https://github.com/smithphil88/the_lucky_roll_cafe)
-2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
+2. At the top of the Repository (not top of page) just above the "Settings" button on the menu, locate the "Fork" button.
 3. Once clicked, you should now have a copy of the original repository in your own GitHub account!
 
 ## Credits
@@ -299,7 +299,7 @@ You can fork this repository by using the following steps:
 | [PEP8](https://peps.python.org/pep-0008/#introduction) | help to fix issues occuring during the python linter |
 | [Bootstrap](https://getbootstrap.com/) | various bootstrap help inc modals, navbar and card assistance |
 | [Materialize](https://materializecss.com/footer.html) | fix to footer |
-| [MarsDevs](https://www.marsdevs.com/blogs/learn-django-tips-tricks-techniques-for-developers#things-to-know-about-django) | how to set up a djanog project |
+| [MarsDevs](https://www.marsdevs.com/blogs/learn-django-tips-tricks-techniques-for-developers#things-to-know-about-django) | how to set up a django project |
 | [Social Dice](https://www.socialdice.co.uk/) | inspiration for some of the content |
 | [Common Meeple](https://www.commonmeeple.co.uk/) | inspiration for some of the content |
 | [Chance & Counters](https://www.chanceandcounters.com/cardiff/) | inspiration for some of the content |
