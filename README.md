@@ -48,7 +48,7 @@ The following examples are screenshots of the various pages on my site.
 
 ### Home page
 
-This is where the user will first land on the site, it leads them to either registering if it their first time visiting the site. A user must register in order to view any details. Or if they alreay have an account, they can proceed to the login page.
+This is where the user will first land on the site, it leads them to either registering if it their first time visiting the site. A user must register in order to view any details. Or if they already have an account, they can proceed to the login page.
 
 ![screenshot](documentation/features/homepage-signedin.png)
 
@@ -60,13 +60,13 @@ This page includes information about what the cafe provides. It enables users to
 
 ### Booking page
 
-On this page, a logged in user is able to choose details for their booking at the cafe. The user has to include details of the type of table they so require, a date of booking, which has been designed so they cannot book in the past, a choice of time slots are avaliable, number of guests (with the maximum being 12) and a place where the user can disclosure any further requirements.
+On this page, a logged in user is able to choose details for their booking at the cafe. The user has to include details of the type of table they so require, a date of booking, which has been designed so they cannot book in the past, a choice of time slots are avaliable, number of guests (with the maximum being 12) and a place where the user can disclosure any further requirements. Certain sections have been coded so that they must be filled in, in order to create a valid booking form.
 
 ![screenshot](documentation/features/booking.png)
 
-### My Profile page
+### Profile page
 
-In this section of the site a user is able to update their information, such as username, first name and last name. If they so wish a user is able to find out information about restting their password on this page too. The ability to delete their account is also included on this page with a modal appearing confirming if a user is sure they want this action to occur.
+In this section of the site a user is able to update their information, such as username, first name and last name. If they so wish a user is able to find out information about resetting their password on this page too. The ability to delete their account is also included on this page with a modal appearing, confirming if a user is sure they want this action to occur.
 
 ![screenshot](documentation/features/profile.png)
 
@@ -124,6 +124,8 @@ A page on the site where a user can post their own experience of a board game. T
 
 This would be an area of the site where a user can make board game recoomendations, ideas for events/theme nights etc directly to the owner. 
 
+Both of these feature will not be included in this deployed version due to time restraints but could be in any future deployments.
+
 ## User Stories
 
 All of user stories can be located in the liked GitHub project [here](https://github.com/users/smithphil88/projects/3).
@@ -142,12 +144,12 @@ Technologies used;
 - [Django](https://www.djangoproject.com) used as the Python framework for the site.
 - [PostgreSQL](https://www.postgresql.org) used as the relational database management.
 - [Heroku](https://www.heroku.com) used for hosting the deployed site.
-- [Cloudinary](https://cloudinary.com) used for online static file storage.
-- [Gunicorn](https://gunicorn.org/) used for WSGI server
+- [Gunicorn](https://gunicorn.org/) used for WSGI server.
+- [Balsamiq](https://balsamiq.com/) used to design mock-up pages.
 
 ## Database
 
-Lucid chart image
+I designed my database using [Lucidchart](https://www.lucidchart.com/pages). I created my Entity Relationship Diagram (ERD) to visualise the relationship between my database models.
 
 ![screenshot](documentation/lucidchart.png)
 
@@ -195,7 +197,6 @@ Deployment steps are as follows, after account setup:
 
 | Key | Value |
 | --- | --- |
-| `CLOUDINARY_URL` | user's own value |
 | `DATABASE_URL` | user's own value |
 | `DISABLE_COLLECTSTATIC` | 1 (*this is temporary, and can be removed for the final deployment*) |
 | `SECRET_KEY` | user's own value |
