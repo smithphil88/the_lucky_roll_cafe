@@ -153,10 +153,27 @@ Lucid chart image
 
 ## Agile design principles
 
-Github project screenshot
+### Github Projects
 
-Github issues screenshot
-Use of MoSCoW  
+[Github Projects](https://github.com/smithphil88/the_lucky_roll_cafe/projects?query=is%3Aopen) was utilised as an Agile design tool throughout this project. Using the right tags, issues and assignments, it served to promote efficient and effective Agile design principles.
+
+User issues were created and issues and tasks were planned and referred back to over the course of the project using this Kanban Board.
+
+The [MoSCoW](https://en.wikipedia.org/wiki/MoSCoW_method) method was used to assist with the organisation of the project, it helped prioritise certain tasks and leave tasks until the end that were not needed for the scope of this assessement.
+
+![screenshot](documentation/github-project.png)
+
+Github Issues
+
+[Github Issues](https://github.com/smithphil88/the_lucky_roll_cafe/issues) was used alongside Github Projects. This was how I created my user stories, using a custom template that served my purposes.
+
+[Closed Issues](https://github.com/smithphil88/the_lucky_roll_cafe/issues?q=is%3Aissue%20state%3Aclosed)
+
+![screenshot](documentation/gh-issues-closed.png)
+
+[Open Issues](https://github.com/smithphil88/the_lucky_roll_cafe/issues)
+
+![screenshot](documentation/gh-issues-open.png)
 
 ## Testing
 

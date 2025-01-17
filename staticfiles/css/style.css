@@ -105,7 +105,7 @@ footer {
 }
 
 .home-title {
-    color: #fff;
+    color: black;
     margin-top: 10px;
     border: solid 2px black;
     background-color:#A3B18A;
@@ -136,7 +136,7 @@ footer {
 }
 
 .about-title {
-    color: #fff;
+    color: black;
     margin-top: 10px;
     border: solid 2px black;
     background-color:#A3B18A;
@@ -151,7 +151,19 @@ footer {
 }
 .btn {
     background-color: #A3B18A;
-    color: white;
+    color: black;
+    border: solid 1px black;
+}
+
+.btn:hover {
+    background-color: #3A5A40;
+    color: #fff;
+    border: solid 1px black;
+}
+
+.btn-danger:hover {
+    background-color:red;
+    color: #fff;
     border: solid 1px black;
 }
 
@@ -188,7 +200,7 @@ img {
 }
 
 .book-link {
-    color: #fff;
+    color: black;
 }
 
 .hero-image-1 {

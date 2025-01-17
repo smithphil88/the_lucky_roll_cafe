@@ -6,7 +6,6 @@ Return back to the [README.md](README.md) file.
 
 I used the [HTML W3C Validator](https://validator.w3.org) to validate my HTML files.
 
-
 | Page | Screenshot | Notes |
 | --- |--- | --- |
 | Home page signed out | ![screenshot](documentation/validation/w3-home-page-signed-out.png)| Pass: No Errors |
@@ -20,7 +19,6 @@ I used the [HTML W3C Validator](https://validator.w3.org) to validate my HTML fi
 | My Profile| ![screenshot](documentation/validation/w3-profile.png)| Pass: No Errors |
 | My Bookings| ![screenshot](documentation/validation/w3-my-bookings.png)| Pass: No Errors |
 
-
 ## CSS
 
 I used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate my CSS files.
@@ -30,7 +28,6 @@ I used the [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to valida
 ## Python
 
 I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validate my Python files.
-
 
 | File | Screenshot | Notes |
 | --- | --- | --- |
@@ -44,8 +41,6 @@ I have used the [PEP8 CI Python Linter](https://pep8ci.herokuapp.com) to validat
 | models.py | ![screenshot](documentation/validation/pep8/models.py.png) | Pass: No Errors |
 | urls.py - table_booking app | ![screenshot](documentation/validation/pep8/urls2.py.png) | Pass: No Errors |
 | views.py | ![screenshot](documentation/validation/pep8/views.py.png) | Pass: No Errors |
-
-
 
 ## Browser Compatability
 
@@ -64,6 +59,7 @@ I have tested my site on different devices and screen sizes to check for any res
 
 | Device | Screen |Screenshot | Notes |
 | --- | --- | --- | --- |
+| Mobile(Devtools)| Home page | ![screenshot](documentation/responsiveness/mobile-devtool.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Home page | ![screenshot](documentation/responsiveness/responsive-home.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-1.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| About page | ![screenshot](documentation/responsiveness/responsive-about-2.png) | Works as expected |
@@ -77,12 +73,39 @@ I have tested my site on different devices and screen sizes to check for any res
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Register | ![screenshot](documentation/responsiveness/responsive-register.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete booking | ![screenshot](documentation/responsiveness/responsive-delete-bookings.png) | Works as expected |
 | GalaxyA50, Pixel 7a, iPhone 14 Pro| Delete account | ![screenshot](documentation/responsiveness/responsive-delete-account.png) | Works as expected |
-
+| Tablet(Devtools) | Home page | ![screenshot](documentation/responsiveness/tablet-devtools.png) | Works as expected |
+| Ipad, Fire HD10| Home page | ![screenshot](documentation/responsiveness/tablet-home.png) | Works as expected |
+| Ipad, Fire HD10| About page | ![screenshot](documentation/responsiveness/tablet-about.png) | Works as expected |
+| Ipad, Fire HD10| About page | ![screenshot](documentation/responsiveness/tablet-about-1.png) | Works as expected |
+| Ipad, Fire HD10| Book page | ![screenshot](documentation/responsiveness/tablet-book.png) | Works as expected |
+| Ipad, Fire HD10| Profile page | ![screenshot](documentation/responsiveness/tablet-profile.png) | Works as expected |
+| Ipad, Fire HD10| My Bookings page | ![screenshot](documentation/responsiveness/tablet-mybooking.png) | Works as expected |
+| Ipad, Fire HD10| Logout | ![screenshot](documentation/responsiveness/tablet-logout.png) | Works as expected |
+| Ipad, Fire HD10| Login | ![screenshot](documentation/responsiveness/tablet-login.png) | Works as expected |
+| Ipad, Fire HD10| Register | ![screenshot](documentation/responsiveness/tablet-register.png) | Works as expected |
 
 ## Lighthouse
 
 I've tested my deployed project using the Lighthouse tool to check for issues.
 
+| Page | Size | Screenshot | Notes |
+| --- | --- | --- | --- |
+| Home | Desktop | ![screenshot](documentation/lighthouse/home.png) | Some minor performance warnings |
+| Home | Mobile | ![screenshot](documentation/lighthouse/home-mobile.png) | Some minor performance warnings |
+| About | Desktop | ![screenshot](documentation/lighthouse/about.png) | Nothing of note |
+| About | Mobile | ![screenshot](documentation/lighthouse/about-mobile.png) | Some minor performance warnings |
+| Book | Desktop | ![screenshot](documentation/lighthouse/book.png) | Nothing of note |
+| Book | Mobile | ![screenshot](documentation/lighthouse/book-mobile.png) | Nothing of note |
+| Profile | Desktop | ![screenshot](documentation/lighthouse/profile.png) | Nothing of note |
+| Profile | Mobile | ![screenshot](documentation/lighthouse/profile-mobile.png) | Nothing of note |
+| Mybooking | Desktop | ![screenshot](documentation/lighthouse/mybooking.png) | Nothing of note |
+| Mybooking | Mobile | ![screenshot](documentation/lighthouse/mybooking-mobile.png) | Nothing of note |
+| Logout | Desktop | ![screenshot](documentation/lighthouse/logout.png) | Nothing of note |
+| Logout | Mobile | ![screenshot](documentation/lighthouse/logout-mobile.png) | Nothing of note |
+| Login | Desktop | ![screenshot](documentation/lighthouse/login.png) | Nothing of note |
+| Login | Mobile | ![screenshot](documentation/lighthouse/login-mobile.png) | Nothing of note |
+| Register | Desktop | ![screenshot](documentation/lighthouse/register.png) | Nothing of note |
+| Register | Mobile | ![screenshot](documentation/lighthouse/register-mobile.png) | Nothing of note |
 
 ## Manual Testing
 
@@ -137,7 +160,6 @@ I have thoroughly tested each aspect of the website as shown below.
 | Logout | | | | |
 | | Click on log out button | Acoount is logged out | Pass | |
 
-
 ## User Stories
 
 Each user story has been fulfilled.
@@ -152,3 +174,8 @@ Each user story has been fulfilled.
 | As a business owner, I can have admin responsibilities, so that I can respond to messages and control bookings. | ![screenshot](documentation/user-stories/user-stories-1.png) |
 | As a user, I can view a menu, so that I have more information about the café. | ![screenshot](documentation/features/about-modal-menu.png) |
 | As a user, I can sign-out of my account, so that my details are kept private. | ![screenshot](documentation/features/logout.png) |
+
+
+## README
+
+Go back to the [README.md](README.md).
