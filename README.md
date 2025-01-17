@@ -169,6 +169,42 @@ For all testing, please refer to the [TESTING.md](TESTING.md) file.
 ### Content
 
 | Source | Comments |
-| --- | --- | --- |
+| --- | --- |
 | [Flexbox Froggy](https://flexboxfroggy.com/) | modern responsive layouts |
 | [W3 Schools](https://www.w3schools.com/django/index.php) | django basics |
+| [Youtube](https://www.youtube.com/watch?v=B40bteAMM_M&list=PLCC34OHNcOtr025c1kHSPrnP18YPB-NFi) | how to style forms and create custom profile pages |
+| [Django documentation ](https://docs.djangoproject.com/en/5.1/) | how to inlcude different types of fields |
+| [PEP8](https://peps.python.org/pep-0008/#introduction) | help to fix issues occuring during the python linter |
+| [Bootstrap](https://getbootstrap.com/) | various bootstrap help inc modals, navbar and card assistance |
+| [Materialize](https://materializecss.com/footer.html) | fix to footer |
+| [MarsDevs](https://www.marsdevs.com/blogs/learn-django-tips-tricks-techniques-for-developers#things-to-know-about-django) | how to set up a djanog project |
+| [Social Dice](https://www.socialdice.co.uk/) | inspiration for some of the content |
+| [Common Meeple](https://www.commonmeeple.co.uk/) | inspiration for some of the content |
+| [Chance & Counters](https://www.chanceandcounters.com/cardiff/) | inspiration for some of the content |
+
+### Media & Images
+
+| Source | Location | Type |
+| --- | --- | --- |
+| [Unsplash](https://unsplash.com/photos/selective-focus-photography-of-chess-pieces-G1yhU1Ej-9A) | see our games modal - chess | image |
+| [Pexels](https://www.pexels.com/photo/a-cup-of-coffee-on-white-saucer-7362647/) | landing page | image |
+| [Unsplash](https://www.pexels.com/photo/scrabble-board-game-on-shallow-focus-lens-1153929/) | see our games modal - scrabble | image |
+| [Unsplash](https://unsplash.com/photos/red-white-yellow-and-green-abstract-painting-BDIFIT1ILDs) | see our games modal - risk | image |
+| [Unsplash](https://unsplash.com/photos/a-group-of-gold-dices-sitting-on-top-of-a-table-UM6vbyYfyJ0) | see our games modal - d&d | image |
+| [Pexels](https://www.pexels.com/photo/colorful-dice-on-table-8111249/) | landing page | image |
+| [Pexels](https://www.pexels.com/photo/close-up-of-coffee-cup-324028/) | see our menu image | image |
+| [Traitors shop](https://www.thetraitors.tv/shop/p/board_game) | see our games modal - traitors | image |
+| [Youtube](https://www.youtube.com/@Imitating/search?query=throw%20throw) | see our games modal - throw throw burrito | image |
+| [Unsplash](https://unsplash.com/photos/white-and-brown-labeled-box-Ey7i2tHVV5E) | see our games modal - monopoly | image |
+| [Pexels](https://pexels.com/photo/close-up-photo-of-monopoly-board-game-776654/) | book now link | image |
+| [Unsplash](https://unsplash.com/photos/a-couple-of-chairs-that-are-sitting-in-front-of-a-table-gdtu3zwVCb4) | see our games | image |
+| [Etsy](https://www.etsy.com/uk/listing/1040029036/coffee-menu-template-drinks-menu-cafe) | coffee menu | image |
+
+### Acknowledgements
+
+- I would like to thank the tutors at Code Institute for helping me throughout the project on various debugging assistance.
+- I would like to thank my tutor Julia for her support.
+- Thank you to my cohort facilitator Lewis for his guidance.
+- And thank you to my partner, Emma, for her complete support and bringing me cups of coffee when they were really needed.
+
+
